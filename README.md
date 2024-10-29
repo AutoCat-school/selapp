@@ -7,7 +7,7 @@ Selenium Java với Appium
 - [Viết scenario](https://github.com/AutoCat-school/Selapp/wiki/Write-your-first-scenario)
 
 ## Các khái niệm
-- [Directory Stucture](https://github.com/AutoCat-school/Selapp/wiki/Directory-Stucture)
+- [Cấu trúc Folder](https://github.com/AutoCat-school/Selapp/wiki/Directory-Stucture)
 - [Cucumber Gherkin](https://github.com/AutoCat-school/Selapp/wiki/Cucumber-Gherkin)
 - [Driver Manager](https://github.com/AutoCat-school/Selapp/wiki/Driver-Manager)
 - [Page object Model](https://github.com/AutoCat-school/Selapp/wiki/Page-object-Model)
