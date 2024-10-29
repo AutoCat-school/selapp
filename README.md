@@ -1,19 +1,19 @@
 # Selapp
-Selenium Java with Appium
+Selenium Java với Appium
 
-## Getting Started
-- [Installation](https://github.com/AutoCat-school/Selapp/wiki/Installation)
-- [Configuration](https://github.com/AutoCat-school/Selapp/wiki/Configuration)
-- [Write your first scenario](https://github.com/AutoCat-school/Selapp/wiki/Write-your-first-scenario)
+## Bắt đầu
+- [Cài đặt](https://github.com/AutoCat-school/Selapp/wiki/Installation)
+- [Tùy chỉnh](https://github.com/AutoCat-school/Selapp/wiki/Configuration)
+- [Viết scenario](https://github.com/AutoCat-school/Selapp/wiki/Write-your-first-scenario)
 
-## Concepts
+## Các khái niệm
 - [Directory Stucture](https://github.com/AutoCat-school/Selapp/wiki/Directory-Stucture)
 - [Cucumber Gherkin](https://github.com/AutoCat-school/Selapp/wiki/Cucumber-Gherkin)
 - [Driver Manager](https://github.com/AutoCat-school/Selapp/wiki/Driver-Manager)
 - [Page object Model](https://github.com/AutoCat-school/Selapp/wiki/Page-object-Model)
 - [Page Generator](https://github.com/AutoCat-school/Selapp/wiki/Page-Generator)
 
-## Predefined Steps
+## Tham khảo thêm
 - [Common Steps](https://github.com/AutoCat-school/Selapp/wiki/All-Common-Steps)
 
 
