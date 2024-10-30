@@ -2,46 +2,46 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-31T04:59:48 GMT+07:00" name="Surefire suite" finished-at="2024-10-31T04:59:57 GMT+07:00" duration-ms="9176">
+  <suite started-at="2024-10-31T05:25:22 GMT+07:00" name="Surefire suite" finished-at="2024-10-31T05:25:29 GMT+07:00" duration-ms="6978">
     <groups>
     </groups>
-    <test started-at="2024-10-31T04:59:48 GMT+07:00" name="Surefire test" finished-at="2024-10-31T04:59:57 GMT+07:00" duration-ms="9176">
+    <test started-at="2024-10-31T05:25:22 GMT+07:00" name="Surefire test" finished-at="2024-10-31T05:25:29 GMT+07:00" duration-ms="6978">
       <class name="features.demo.google.GooglePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T04:59:48 GMT+07:00" name="setUp" finished-at="2024-10-31T04:59:49 GMT+07:00" duration-ms="898" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T05:25:22 GMT+07:00" name="setUp" finished-at="2024-10-31T05:25:22 GMT+07:00" duration-ms="872" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testGoogleSearch()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T04:59:49 GMT+07:00" name="testGoogleSearch" finished-at="2024-10-31T04:59:49 GMT+07:00" duration-ms="549" status="PASS">
+        <test-method signature="testGoogleSearch()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T05:25:22 GMT+07:00" name="testGoogleSearch" finished-at="2024-10-31T05:25:23 GMT+07:00" duration-ms="465" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogleSearch -->
-        <test-method signature="testGoogleSearchAnime()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T04:59:49 GMT+07:00" name="testGoogleSearchAnime" finished-at="2024-10-31T04:59:50 GMT+07:00" duration-ms="909" status="PASS">
+        <test-method signature="testGoogleSearchAnime()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T05:25:23 GMT+07:00" name="testGoogleSearchAnime" finished-at="2024-10-31T05:25:24 GMT+07:00" duration-ms="900" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogleSearchAnime -->
-        <test-method signature="testSearchSaiGame()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T04:59:50 GMT+07:00" name="testSearchSaiGame" finished-at="2024-10-31T04:59:55 GMT+07:00" duration-ms="4913" status="PASS">
+        <test-method signature="testSearchSaiGame()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T05:25:24 GMT+07:00" name="testSearchSaiGame" finished-at="2024-10-31T05:25:27 GMT+07:00" duration-ms="2964" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchSaiGame -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T04:59:55 GMT+07:00" name="tearDown" finished-at="2024-10-31T04:59:55 GMT+07:00" duration-ms="110" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:features.demo.google.GooglePageTest@159f197]" started-at="2024-10-31T05:25:27 GMT+07:00" name="tearDown" finished-at="2024-10-31T05:25:27 GMT+07:00" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- features.demo.google.GooglePageTest -->
       <class name="features.demo.google.GoogleSearchTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T04:59:55 GMT+07:00" name="setUp" finished-at="2024-10-31T04:59:56 GMT+07:00" duration-ms="653" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T05:25:27 GMT+07:00" name="setUp" finished-at="2024-10-31T05:25:28 GMT+07:00" duration-ms="658" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testGoogleSearch()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T04:59:56 GMT+07:00" name="testGoogleSearch" finished-at="2024-10-31T04:59:57 GMT+07:00" duration-ms="660" status="PASS">
+        <test-method signature="testGoogleSearch()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T05:25:28 GMT+07:00" name="testGoogleSearch" finished-at="2024-10-31T05:25:28 GMT+07:00" duration-ms="505" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogleSearch -->
-        <test-method signature="testGoogleSearchAnime()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T04:59:57 GMT+07:00" name="testGoogleSearchAnime" finished-at="2024-10-31T04:59:57 GMT+07:00" duration-ms="384" status="PASS">
+        <test-method signature="testGoogleSearchAnime()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T05:25:28 GMT+07:00" name="testGoogleSearchAnime" finished-at="2024-10-31T05:25:28 GMT+07:00" duration-ms="398" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogleSearchAnime -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T04:59:57 GMT+07:00" name="tearDown" finished-at="2024-10-31T04:59:57 GMT+07:00" duration-ms="81" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:features.demo.google.GoogleSearchTest@12e61fe6]" started-at="2024-10-31T05:25:28 GMT+07:00" name="tearDown" finished-at="2024-10-31T05:25:29 GMT+07:00" duration-ms="86" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

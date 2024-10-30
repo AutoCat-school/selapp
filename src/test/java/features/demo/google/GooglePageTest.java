@@ -69,7 +69,14 @@ public class GooglePageTest {
         WebElement searchButton = this.page.getSearchButton();
         searchButton.click();
 
+        List<WebElement> elements = this.page.getSearchResults();
+        WebElement firstElement = elements.get(0);
+        String textResult = firstElement.getText();
+
+        Verify.equals(textResult, keyword);
+
+        System.out.println("firstElement: " + firstElement.getText());
         System.out.println("GooglePageTest search Anime");
-        this.page.sleepInSecond(3);
+        this.page.sleepInSecond(1);
     }
 }
