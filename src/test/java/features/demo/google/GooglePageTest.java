@@ -40,7 +40,7 @@ public class GooglePageTest {
         this.page.goToHomePage();
 
         String title = this.page.getTitle();
-        System.out.println("Page title is: " + title);
+        this.page.println("Page title is: " + title);
         // this.page.sleepInSecond(3);
     }
 
@@ -54,7 +54,7 @@ public class GooglePageTest {
         WebElement searchButton = this.page.getSearchButton();
         searchButton.click();
 
-        System.out.println("GooglePageTest search Anime");
+        this.page.println("GooglePageTest search Anime");
         // this.page.sleepInSecond(3);
     }
 
@@ -75,7 +75,7 @@ public class GooglePageTest {
 
         Verify.equals(textResult, keyword);
 
-        System.out.println("firstElement: " + firstElement.getText());
-        this.page.sleepInSecond(1);
+        this.page.println("firstElement: " + firstElement.getText());
+        // this.page.sleepInSecond(1);
     }
 }
