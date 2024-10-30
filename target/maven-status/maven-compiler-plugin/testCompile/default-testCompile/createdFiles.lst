@@ -1,1 +1,3 @@
-demo\google\GoogleSearchTest.class
+core\utilities\Utils.class
+core\DriverManager.class
+features\demo\google\GoogleSearchTest.class

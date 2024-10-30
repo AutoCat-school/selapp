@@ -1,4 +1,4 @@
-package demo.google;
+package features.demo.google;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
