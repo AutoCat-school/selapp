@@ -76,7 +76,6 @@ public class GooglePageTest {
         Verify.equals(textResult, keyword);
 
         System.out.println("firstElement: " + firstElement.getText());
-        System.out.println("GooglePageTest search Anime");
         this.page.sleepInSecond(1);
     }
 }

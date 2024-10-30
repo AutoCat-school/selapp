@@ -1,4 +1,4 @@
-# Created at 2024-10-31T05:25:21.725
+# Created at 2024-10-31T05:35:44.951
 Boot Manifest-JAR contains absolute paths in classpath 'E:\Studio\AutoCat\projects\selapp\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 
