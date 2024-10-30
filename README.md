@@ -1,7 +1,8 @@
 # Selapp
 Selenium Java with Appium
 
-## Getting started (https://github.com/AutoCat-school/Selapp/wiki/Installation)
+## Getting started
+- [Installation](https://github.com/AutoCat-school/Selapp/wiki/Installation)
 - [Configuration](https://github.com/AutoCat-school/Selapp/wiki/Configuration)
 - [Write your first scenario](https://github.com/AutoCat-school/Selapp/wiki/Write-your-first-scenario)
 
