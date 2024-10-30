@@ -1,5 +1,6 @@
 package pages.demo.google;
 
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ public class GooglePage extends AbstractWeb {
 
     private By byKeywordInput = this.byDynamic("textarea", "name", "q");
     private By bySearchButton = this.byDynamic("input", "type", "submit");
+    private By bySearchResults = this.byDynamic("h3", "class", "LC20lb");
 
     public GooglePage(WebDriver driver) {
         super(driver);
@@ -26,5 +28,9 @@ public class GooglePage extends AbstractWeb {
 
     public WebElement getSearchButton() {
         return this.findVisibleElement(this.bySearchButton);
+    }
+
+    public List<WebElement> getSearchResults() {
+        return this.findElements(this.bySearchResults);
     }
 }

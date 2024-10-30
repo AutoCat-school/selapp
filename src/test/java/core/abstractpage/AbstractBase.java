@@ -1,15 +1,12 @@
 package core.abstractpage;
 
 import core.report.Report;
+import core.utilities.Utils;
 
 public abstract class AbstractBase {
 
     public void sleep(int miliSeconds) {
-        try {
-            Thread.sleep(miliSeconds);
-        } catch (InterruptedException e) {
-            this.println(e.getMessage());
-        }
+        Utils.sleep(miliSeconds);
     }
 
     public void sleepInSecond(int seconds) {

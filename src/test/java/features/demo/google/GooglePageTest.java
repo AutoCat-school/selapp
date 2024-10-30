@@ -1,15 +1,15 @@
 package features.demo.google;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 import core.driver.DriverManager;
-import core.utilities.Utils;
+import core.verify.Verify;
 import pages.demo.google.GooglePage;
 
 public class GooglePageTest {
@@ -41,7 +41,7 @@ public class GooglePageTest {
 
         String title = this.page.getTitle();
         System.out.println("Page title is: " + title);
-        Utils.sleep(3000);
+        // this.page.sleepInSecond(3);
     }
 
     @Test
@@ -55,6 +55,21 @@ public class GooglePageTest {
         searchButton.click();
 
         System.out.println("GooglePageTest search Anime");
-        Utils.sleep(3000);
+        // this.page.sleepInSecond(3);
+    }
+
+    @Test
+    public void testSearchSaiGame() {
+        this.page.goToHomePage();
+
+        String keyword = "Sai Game";
+        WebElement searchBox = this.page.getSearchBox();
+        searchBox.sendKeys(keyword);
+
+        WebElement searchButton = this.page.getSearchButton();
+        searchButton.click();
+
+        System.out.println("GooglePageTest search Anime");
+        this.page.sleepInSecond(3);
     }
 }

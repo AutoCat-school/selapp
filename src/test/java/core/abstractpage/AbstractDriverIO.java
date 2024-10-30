@@ -1,5 +1,6 @@
 package core.abstractpage;
 
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
@@ -21,6 +22,11 @@ public abstract class AbstractDriverIO extends AbstractBase {
         return this.driver;
     }
 
+    public By byDynamic(String tagName, String attribute, String value) {
+        String path = String.format("//%s[contains(@%s,'%s')]", tagName, attribute, value);
+        return By.xpath(path);
+    }
+
     public WebElement findVisibleElement(By elementBy) throws NoSuchElementException {
         try {
             return this.explicitDriverWait.until(ExpectedConditions.visibilityOfElementLocated(elementBy));
@@ -29,8 +35,11 @@ public abstract class AbstractDriverIO extends AbstractBase {
         }
     }
 
-    public By byDynamic(String tagName, String attribute, String value) {
-        String path = String.format("//%s[contains(@%s,'%s')]", tagName, attribute, value);
-        return By.xpath(path);
+    public List<WebElement> findElements(By elementBy) throws NoSuchElementException {
+        try {
+            return this.explicitDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementBy));
+        } catch (TimeoutException e) {
+            throw new NoSuchElementException(String.format("Elements not found: %s", elementBy.toString()), e);
+        }
     }
 }

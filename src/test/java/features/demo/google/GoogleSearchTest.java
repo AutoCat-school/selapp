@@ -35,7 +35,7 @@ public class GoogleSearchTest {
     public void testGoogleSearch() {
         this.driver.get("https://www.google.com");
         System.out.println("Page title is: " + driver.getTitle());
-        Utils.sleep(3000);
+        // Utils.sleep(3000);
     }
 
     @Test
@@ -46,6 +46,6 @@ public class GoogleSearchTest {
         searchBox.sendKeys("Anime");
         searchBox.sendKeys(Keys.RETURN);
         System.out.println("GoogleSearchTest search Anime");
-        Utils.sleep(3000);
+        // Utils.sleep(3000);
     }
 }

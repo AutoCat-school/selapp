@@ -1,5 +1,7 @@
+pages\demo\google\GoogleImagePage.class
 core\abstractpage\AbstractWeb.class
 core\utilities\Utils.class
+features\demo\google\GooglePageTest.class
 core\abstractpage\AbstractDriverIO.class
 core\abstractpage\AbstractBase.class
 core\report\Report.class
