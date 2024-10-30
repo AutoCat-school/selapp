@@ -1,3 +1,8 @@
+core\abstractpage\AbstractWeb.class
 core\utilities\Utils.class
+core\abstractpage\AbstractDriverIO.class
+core\abstractpage\AbstractBase.class
+core\report\Report.class
+pages\demo\google\GooglePage.class
 core\driver\DriverManager.class
 features\demo\google\GoogleSearchTest.class

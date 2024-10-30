@@ -13,7 +13,6 @@ public abstract class AbstractDriverIO extends AbstractBase {
     protected WebDriverWait explicitDriverWait;
 
     public AbstractDriverIO(WebDriver driver) {
-        super();
         this.driver = driver;
     }
 

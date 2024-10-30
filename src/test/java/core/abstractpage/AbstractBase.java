@@ -4,10 +4,6 @@ import core.report.Report;
 
 public abstract class AbstractBase {
 
-    public AbstractBase() {
-        // nothing for now
-    }
-
     public void sleep(int miliSeconds) {
         try {
             Thread.sleep(miliSeconds);
