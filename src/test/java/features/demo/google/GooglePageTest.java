@@ -48,11 +48,13 @@ public class GooglePageTest {
     public void testGoogleSearchAnime() {
         this.page.goToHomePage();
 
-        By locator = By.name("q");
-        WebElement searchBox = driver.findElement(locator);
+        WebElement searchBox = this.page.getSearchBox();
         searchBox.sendKeys("Anime");
-        searchBox.sendKeys(Keys.RETURN);
-        System.out.println("GoogleSearchTest search Anime");
+
+        WebElement searchButton = this.page.getSearchButton();
+        searchButton.click();
+
+        System.out.println("GooglePageTest search Anime");
         Utils.sleep(3000);
     }
 }

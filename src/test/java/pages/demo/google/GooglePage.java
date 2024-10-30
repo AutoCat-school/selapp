@@ -8,7 +8,8 @@ import core.abstractpage.AbstractWeb;
 
 public class GooglePage extends AbstractWeb {
 
-    protected By byKeywordInput = this.byDynamic("textarea", "name", "q");
+    private By byKeywordInput = this.byDynamic("textarea", "name", "q");
+    private By bySearchButton = this.byDynamic("input", "type", "submit");
 
     public GooglePage(WebDriver driver) {
         super(driver);
@@ -19,7 +20,11 @@ public class GooglePage extends AbstractWeb {
         return "https://www.google.com?hl=en";
     }
 
-    public WebElement getKeywordInput() {
+    public WebElement getSearchBox() {
         return this.findVisibleElement(this.byKeywordInput);
+    }
+
+    public WebElement getSearchButton() {
+        return this.findVisibleElement(this.bySearchButton);
     }
 }
