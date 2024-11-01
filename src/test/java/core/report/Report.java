@@ -1,5 +1,7 @@
 package core.report;
 
+import core.utilities.Config;
+
 public class Report {
     public static void println(String log) {
         System.out.println(log);
