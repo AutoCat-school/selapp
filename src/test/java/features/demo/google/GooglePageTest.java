@@ -3,18 +3,26 @@ package features.demo.google;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import core.report.Report;
+
 public class GooglePageTest extends GoogleBaseTest {
+
     @Test
     public void testGoogleSearch() {
+        Report.createTest("Google Search");
         this.page.goToHomePage();
 
         String title = this.page.getTitle();
         this.page.println("Page title is: " + title);
+        Report.info("Page title is: " + title);
+
         // this.page.sleepInSecond(3);
     }
 
     @Test
     public void testGoogleSearchAnime() {
+        Report.createTest("Search Anime");
+
         this.page.goToHomePage();
 
         WebElement searchBox = this.page.getSearchBox();
@@ -24,11 +32,15 @@ public class GooglePageTest extends GoogleBaseTest {
         searchButton.click();
 
         this.page.println("GooglePageTest search Anime");
+        Report.pass("Search success");
+
         // this.page.sleepInSecond(3);
     }
 
     @Test
     public void testSearchSaiGame() {
+        Report.createTest("Search Sai Game");
+
         this.page.goToHomePage();
 
         String keyword = "Sai Game";
@@ -39,6 +51,7 @@ public class GooglePageTest extends GoogleBaseTest {
         searchButton.click();
 
         this.page.verifyResultsHas(keyword);
+        this.page.verifyResultsHas("wrong");
 
         // List<WebElement> elements = this.page.getSearchResults();
         // WebElement firstElement = elements.get(0);
