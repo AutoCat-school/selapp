@@ -42,6 +42,10 @@ public class GooglePageTest extends GoogleBaseTest {
         searchButton.click();
 
         this.page.verifyResultsHas(keyword);
+        this.page.verifyResultsHas(keyword);
+        this.page.verifyResultsHas(keyword);
+        this.page.verifyResultsHas(keyword);
+        this.page.verifyResultsHas(keyword);
         this.page.verifyResultsHas("wrong");
 
         // List<WebElement> elements = this.page.getSearchResults();

@@ -9,6 +9,16 @@ import org.testng.ITestResult;
 public class TestListener implements ITestListener {
 
     @Override
+    public void onStart(ITestContext context) {
+        Report.setUp();
+    }
+
+    @Override
+    public void onFinish(ITestContext context) {
+        Report.tearDown();
+    }
+
+    @Override
     public void onTestStart(ITestResult result) {
         String testName = result.getMethod().getMethodName();
         Report.createTest(testName);
@@ -29,15 +39,5 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         Report.skip("Skipped: " + result.getMethod().getMethodName());
-    }
-
-    @Override
-    public void onStart(ITestContext context) {
-        Report.setUp();
-    }
-
-    @Override
-    public void onFinish(ITestContext context) {
-        Report.tearDown();
     }
 }

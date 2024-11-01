@@ -5,7 +5,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import core.driver.DriverManager;
-import core.report.Report;
 
 public abstract class DemoBaseTest {
 
@@ -18,8 +17,6 @@ public abstract class DemoBaseTest {
 
         this.driverManager = new DriverManager();
         this.driver = this.driverManager.getWebDriver();
-
-        // Report.setUp();
     }
 
     @AfterClass
@@ -27,8 +24,6 @@ public abstract class DemoBaseTest {
         if (this.driver != null) {
             this.driver.quit();
         }
-
-        // Report.tearDown();
 
         System.out.println("DemoBaseTest tearDown");
     }
