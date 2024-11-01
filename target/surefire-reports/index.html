@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
-              <span class="suite-name border-passed">Surefire suite</span>
+              <span class="suite-name border-failed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Surefire_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GooglePageTest" class="method navigator-link" hash-for-method="testSearchSaiGame">testSearchSaiGame</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,22 +117,22 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GoogleSearchTest" class="method navigator-link" hash-for-method="testGoogleSearch">testGoogleSearch</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GooglePageTest" class="method navigator-link" hash-for-method="testGoogleSearch">testGoogleSearch</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GooglePageTest" class="method navigator-link" hash-for-method="testGoogleSearchAnime">testGoogleSearchAnime</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GoogleSearchTest" class="method navigator-link" hash-for-method="testGoogleSearch">testGoogleSearch</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GoogleSearchTest" class="method navigator-link" hash-for-method="testGoogleSearchAnime">testGoogleSearchAnime</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GooglePageTest" class="method navigator-link" hash-for-method="testGoogleSearchAnime">testGoogleSearchAnime</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -129,11 +143,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GooglePageTwoTest" class="method navigator-link" hash-for-method="testGoogleSearchTwo">testGoogleSearchTwo</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="features.demo.google.GooglePageTest" class="method navigator-link" hash-for-method="testSearchSaiGame">testSearchSaiGame</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -153,6 +162,57 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">features.demo.google.GooglePageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchSaiGame">
+                  </a> <!-- testSearchSaiGame -->
+                  <span class="method-name">testSearchSaiGame</span>
+                  <div class="stack-trace">java.lang.AssertionError: Keyword not in the result expected [true] but found [false]
+	at core.verify.Verify.isTrue(Verify.java:28)
+	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
+	at features.demo.google.GooglePageTest.testSearchSaiGame(GooglePageTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">features.demo.google.GooglePageTwoTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGoogleSearchAnimeTwo">
+                  </a> <!-- testGoogleSearchAnimeTwo -->
+                  <span class="method-name">testGoogleSearchAnimeTwo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGoogleSearchTwo">
+                  </a> <!-- testGoogleSearchTwo -->
+                  <span class="method-name">testGoogleSearchTwo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchSaiGameTwo">
+                  </a> <!-- testSearchSaiGameTwo -->
+                  <span class="method-name">testSearchSaiGameTwo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
           <div class="suite-Surefire_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -193,42 +253,6 @@
                   <a name="testGoogleSearchAnime">
                   </a> <!-- testGoogleSearchAnime -->
                   <span class="method-name">testGoogleSearchAnime</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testSearchSaiGame">
-                  </a> <!-- testSearchSaiGame -->
-                  <span class="method-name">testSearchSaiGame</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
-          <div class="suite-Surefire_suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">features.demo.google.GooglePageTwoTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testGoogleSearchAnimeTwo">
-                  </a> <!-- testGoogleSearchAnimeTwo -->
-                  <span class="method-name">testGoogleSearchAnimeTwo</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testGoogleSearchTwo">
-                  </a> <!-- testGoogleSearchTwo -->
-                  <span class="method-name">testGoogleSearchTwo</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testSearchSaiGameTwo">
-                  </a> <!-- testSearchSaiGameTwo -->
-                  <span class="method-name">testSearchSaiGameTwo</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -292,40 +316,40 @@ data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testSearchSaiGame')
 data.setCell(0, 2, 'features.demo.google.GooglePageTest')
-data.setCell(0, 3, 2939);
+data.setCell(0, 3, 2932);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testSearchSaiGameTwo')
 data.setCell(1, 2, 'features.demo.google.GooglePageTwoTest')
-data.setCell(1, 3, 2090);
+data.setCell(1, 3, 2814);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testGoogleSearchAnimeTwo')
 data.setCell(2, 2, 'features.demo.google.GooglePageTwoTest')
-data.setCell(2, 3, 1110);
+data.setCell(2, 3, 1161);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'testGoogleSearchAnime')
 data.setCell(3, 2, 'features.demo.google.GooglePageTest')
-data.setCell(3, 3, 875);
+data.setCell(3, 3, 893);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'testGoogleSearch')
 data.setCell(4, 2, 'features.demo.google.GoogleSearchTest')
-data.setCell(4, 3, 626);
+data.setCell(4, 3, 658);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testGoogleSearch')
 data.setCell(5, 2, 'features.demo.google.GooglePageTest')
-data.setCell(5, 3, 465);
+data.setCell(5, 3, 467);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'testGoogleSearchAnime')
 data.setCell(6, 2, 'features.demo.google.GoogleSearchTest')
-data.setCell(6, 3, 448);
+data.setCell(6, 3, 409);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'testGoogleSearchTwo')
 data.setCell(7, 2, 'features.demo.google.GooglePageTwoTest')
-data.setCell(7, 3, 221);
+data.setCell(7, 3, 223);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -358,61 +382,63 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testGoogleSearch</span>
-                <span class="method-start">911 ms</span>
+                <span class="method-start">986 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGoogleSearchAnime</span>
-                <span class="method-start">1377 ms</span>
+                <span class="method-start">1453 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testSearchSaiGame</span>
-                <span class="method-start">2252 ms</span>
+                <span class="method-start">2347 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">5192 ms</span>
+                <span class="method-start">5281 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">features.demo.google.GooglePageTwoTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">5286 ms</span>
+                <span class="method-start">5502 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testGoogleSearchAnimeTwo</span>
-                <span class="method-start">5922 ms</span>
+                <span class="method-start">6149 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGoogleSearchTwo</span>
-                <span class="method-start">7032 ms</span>
+                <span class="method-start">7311 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testSearchSaiGameTwo</span>
-                <span class="method-start">7253 ms</span>
+                <span class="method-start">7534 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">9343 ms</span>
+                <span class="method-start">10349 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">features.demo.google.GoogleSearchTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">9419 ms</span>
+                <span class="method-start">10455 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testGoogleSearch</span>
-                <span class="method-start">10041 ms</span>
+                <span class="method-start">11077 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGoogleSearchAnime</span>
-                <span class="method-start">10667 ms</span>
+                <span class="method-start">11736 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">11115 ms</span>
+                <span class="method-start">12145 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

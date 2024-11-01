@@ -8,6 +8,7 @@ core\abstractpage\AbstractBase.class
 core\report\Report.class
 features\demo\google\GooglePageTwoTest.class
 core\driver\DriverManager.class
+core\report\ReportExtent.class
 features\demo\google\GooglePageTest.class
 features\demo\DemoBaseTest.class
 pages\demo\google\GooglePage.class
