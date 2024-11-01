@@ -1,14 +1,11 @@
 package features.demo.google;
 
-import java.security.Key;
-import java.util.List;
-
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import core.verify.Verify;
+import core.driver.DriverManager;
 import features.demo.DemoBaseTest;
 import pages.demo.google.GooglePage;
 
@@ -18,9 +15,20 @@ public class GooglePageTwoTest extends DemoBaseTest {
 
     @BeforeClass
     public void setUp() {
-        super.setUp();
+        System.out.println("GooglePageTest setUp");
+
+        DriverManager manager = new DriverManager();
+        this.driver = manager.getWebDriver();
 
         this.page = new GooglePage(this.driver);
+    }
+
+    @AfterClass
+    public void tearDown() {
+        if (this.driver != null) {
+            this.driver.quit();
+        }
+        System.out.println("GooglePageTest tearDown");
     }
 
     @Test

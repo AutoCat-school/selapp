@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import core.driver.DriverManager;
-import core.utilities.Utils;
 
 public class GoogleSearchTest {
 
