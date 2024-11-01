@@ -1,41 +1,30 @@
 package features.demo.google;
 
+import java.security.Key;
 import java.util.List;
-import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import core.driver.DriverManager;
 import core.verify.Verify;
+import features.demo.DemoBaseTest;
 import pages.demo.google.GooglePage;
 
-public class GooglePageTest {
+public class GooglePageTwoTest extends DemoBaseTest {
 
-    protected WebDriver driver;
     protected GooglePage page;
 
     @BeforeClass
     public void setUp() {
-        System.out.println("GooglePageTest setUp");
-
-        DriverManager manager = new DriverManager();
-        this.driver = manager.getWebDriver();
+        super.setUp();
 
         this.page = new GooglePage(this.driver);
     }
 
-    @AfterClass
-    public void tearDown() {
-        if (this.driver != null) {
-            this.driver.quit();
-        }
-        System.out.println("GooglePageTest tearDown");
-    }
-
     @Test
-    public void testGoogleSearch() {
+    public void testGoogleSearchTwo() {
         this.page.goToHomePage();
 
         String title = this.page.getTitle();
@@ -44,7 +33,7 @@ public class GooglePageTest {
     }
 
     @Test
-    public void testGoogleSearchAnime() {
+    public void testGoogleSearchAnimeTwo() {
         this.page.goToHomePage();
 
         WebElement searchBox = this.page.getSearchBox();
@@ -58,7 +47,7 @@ public class GooglePageTest {
     }
 
     @Test
-    public void testSearchSaiGame() {
+    public void testSearchSaiGameTwo() {
         this.page.goToHomePage();
 
         String keyword = "Sai Game";
@@ -68,12 +57,7 @@ public class GooglePageTest {
         WebElement searchButton = this.page.getSearchButton();
         searchButton.click();
 
-        List<WebElement> elements = this.page.getSearchResults();
-        WebElement firstElement = elements.get(0);
-        String textResult = firstElement.getText();
-        Verify.equals(textResult, keyword);
-        this.page.println("firstElement: " + firstElement.getText());
-
+        this.page.verifyResultsHas(keyword);
         // this.page.sleepInSecond(1);
     }
 }

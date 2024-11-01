@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import core.abstractpage.AbstractWeb;
+import core.verify.Verify;
 
 public class GooglePage extends AbstractWeb {
 
@@ -32,5 +33,19 @@ public class GooglePage extends AbstractWeb {
 
     public List<WebElement> getSearchResults() {
         return this.findElements(this.bySearchResults);
+    }
+
+    public void verifyResultsHas(String keyword) {
+        String textResult;
+        boolean hasResult = false;
+        List<WebElement> elements = this.getSearchResults();
+        for (WebElement webElement : elements) {
+            textResult = webElement.getText();
+            if (textResult.equals(keyword)) {
+                hasResult = true;
+                break;
+            }
+        }
+        Verify.isTrue(hasResult, "Keyword not in the result");
     }
 }
