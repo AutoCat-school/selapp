@@ -19,7 +19,7 @@ public abstract class DemoBaseTest {
         this.driverManager = new DriverManager();
         this.driver = this.driverManager.getWebDriver();
 
-        Report.setUp();
+        // Report.setUp();
     }
 
     @AfterClass
@@ -28,7 +28,7 @@ public abstract class DemoBaseTest {
             this.driver.quit();
         }
 
-        Report.tearDown();
+        // Report.tearDown();
 
         System.out.println("DemoBaseTest tearDown");
     }

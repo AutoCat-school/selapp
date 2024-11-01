@@ -7,9 +7,17 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="testGoogleSearch"/>
           <include name="testSearchSaiGame"/>
         </methods>
       </class> <!-- features.demo.google.GooglePageTest -->
+      <class name="features.demo.google.GooglePageTwoTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testSearchSaiGameTwo"/>
+        </methods>
+      </class> <!-- features.demo.google.GooglePageTwoTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

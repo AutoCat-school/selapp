@@ -11,7 +11,7 @@ public class ReportExtent {
     public static synchronized ExtentReports getExtentReports() {
         if (ReportExtent.extent == null) {
             ReportExtent.extent = new ExtentReports();
-            ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/report/ExtentReport.html");
+            ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/extent-report/ExtentReport.html");
             ReportExtent.extent.attachReporter(sparkReporter);
         }
         return ReportExtent.extent;
@@ -43,5 +43,10 @@ public class ReportExtent {
     public static void fail(String info) {
         info = String.format("<span class='text-danger font-weight-bold'>%s</span>", info);
         ReportExtent.getTest().fail(info);
+    }
+
+    public static void skip(String info) {
+        info = String.format("<span class='text-warning'>%s</span>", info);
+        ReportExtent.getTest().skip(info);
     }
 }

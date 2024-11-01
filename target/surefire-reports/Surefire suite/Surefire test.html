@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Surefire test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Nov 02 05:02:13 GMT+07:00 2024</td>
+<td>Started on:</td><td>Sat Nov 02 05:37:12 GMT+07:00 2024</td>
 </tr>
-<tr><td>Total time:</td><td>12 seconds (12233 ms)</td>
+<tr><td>Total time:</td><td>13 seconds (13418 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,20 +76,21 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='features.demo.google.GooglePageTest.testSearchSaiGame()'><b>testSearchSaiGame</b><br>Test class: features.demo.google.GooglePageTest</td>
-<td><div><pre>java.lang.AssertionError: Keyword not in the result expected [true] but found [false]
-	at core.verify.Verify.isTrue(Verify.java:28)
+<td title='features.demo.google.GooglePageTwoTest.testSearchSaiGameTwo()'><b>testSearchSaiGameTwo</b><br>Test class: features.demo.google.GooglePageTwoTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.pass(ReportExtent.java:40)
+	at core.report.Report.pass(Report.java:25)
+	at core.verify.Verify.isTrue(Verify.java:29)
 	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
-	at features.demo.google.GooglePageTest.testSearchSaiGame(GooglePageTest.java:54)
+	at features.demo.google.GooglePageTwoTest.testSearchSaiGameTwo(GooglePageTwoTest.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1048128739", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1048128739'><pre>java.lang.AssertionError: Keyword not in the result expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at core.verify.Verify.isTrue(Verify.java:28)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1410367298", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1410367298'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.pass(ReportExtent.java:40)
+	at core.report.Report.pass(Report.java:25)
+	at core.verify.Verify.isTrue(Verify.java:29)
 	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
-	at features.demo.google.GooglePageTest.testSearchSaiGame(GooglePageTest.java:54)
+	at features.demo.google.GooglePageTwoTest.testSearchSaiGameTwo(GooglePageTwoTest.java:44)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -123,7 +124,103 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 </pre></div></td>
 <td>2</td>
-<td>features.demo.google.GooglePageTest@35047d03</td></tr>
+<td>features.demo.google.GooglePageTwoTest@cd3fee8</td></tr>
+<tr>
+<td title='features.demo.google.GooglePageTest.testSearchSaiGame()'><b>testSearchSaiGame</b><br>Test class: features.demo.google.GooglePageTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.pass(ReportExtent.java:40)
+	at core.report.Report.pass(Report.java:25)
+	at core.verify.Verify.isTrue(Verify.java:29)
+	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
+	at features.demo.google.GooglePageTest.testSearchSaiGame(GooglePageTest.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1648582256", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1648582256'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.pass(ReportExtent.java:40)
+	at core.report.Report.pass(Report.java:25)
+	at core.verify.Verify.isTrue(Verify.java:29)
+	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
+	at features.demo.google.GooglePageTest.testSearchSaiGame(GooglePageTest.java:47)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:136)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:145)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+</pre></div></td>
+<td>2</td>
+<td>features.demo.google.GooglePageTest@4b5d6a01</td></tr>
+<tr>
+<td title='features.demo.google.GooglePageTest.testGoogleSearch()'><b>testGoogleSearch</b><br>Test class: features.demo.google.GooglePageTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.info(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.info(ReportExtent.java:35)
+	at core.report.Report.info(Report.java:21)
+	at features.demo.google.GooglePageTest.testGoogleSearch(GooglePageTest.java:16)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace487416600", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace487416600'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.info(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.info(ReportExtent.java:35)
+	at core.report.Report.info(Report.java:21)
+	at features.demo.google.GooglePageTest.testGoogleSearch(GooglePageTest.java:16)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:136)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:145)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+</pre></div></td>
+<td>0</td>
+<td>features.demo.google.GooglePageTest@4b5d6a01</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -134,40 +231,30 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='features.demo.google.GooglePageTwoTest.testGoogleSearchTwo()'><b>testGoogleSearchTwo</b><br>Test class: features.demo.google.GooglePageTwoTest</td>
+<td title='features.demo.google.GooglePageTest.testGoogleSearchAnime()'><b>testGoogleSearchAnime</b><br>Test class: features.demo.google.GooglePageTest</td>
 <td></td>
 <td>0</td>
-<td>features.demo.google.GooglePageTwoTest@be64738</td></tr>
-<tr>
-<td title='features.demo.google.GooglePageTwoTest.testSearchSaiGameTwo()'><b>testSearchSaiGameTwo</b><br>Test class: features.demo.google.GooglePageTwoTest</td>
-<td></td>
-<td>2</td>
-<td>features.demo.google.GooglePageTwoTest@be64738</td></tr>
-<tr>
-<td title='features.demo.google.GooglePageTest.testGoogleSearch()'><b>testGoogleSearch</b><br>Test class: features.demo.google.GooglePageTest</td>
-<td></td>
-<td>0</td>
-<td>features.demo.google.GooglePageTest@35047d03</td></tr>
-<tr>
-<td title='features.demo.google.GoogleSearchTest.testGoogleSearchAnime()'><b>testGoogleSearchAnime</b><br>Test class: features.demo.google.GoogleSearchTest</td>
-<td></td>
-<td>0</td>
-<td>features.demo.google.GoogleSearchTest@3ba9ad43</td></tr>
+<td>features.demo.google.GooglePageTest@4b5d6a01</td></tr>
 <tr>
 <td title='features.demo.google.GoogleSearchTest.testGoogleSearch()'><b>testGoogleSearch</b><br>Test class: features.demo.google.GoogleSearchTest</td>
 <td></td>
 <td>0</td>
-<td>features.demo.google.GoogleSearchTest@3ba9ad43</td></tr>
+<td>features.demo.google.GoogleSearchTest@3e2e18f2</td></tr>
 <tr>
-<td title='features.demo.google.GooglePageTest.testGoogleSearchAnime()'><b>testGoogleSearchAnime</b><br>Test class: features.demo.google.GooglePageTest</td>
+<td title='features.demo.google.GooglePageTwoTest.testGoogleSearchTwo()'><b>testGoogleSearchTwo</b><br>Test class: features.demo.google.GooglePageTwoTest</td>
 <td></td>
 <td>0</td>
-<td>features.demo.google.GooglePageTest@35047d03</td></tr>
+<td>features.demo.google.GooglePageTwoTest@cd3fee8</td></tr>
+<tr>
+<td title='features.demo.google.GoogleSearchTest.testGoogleSearchAnime()'><b>testGoogleSearchAnime</b><br>Test class: features.demo.google.GoogleSearchTest</td>
+<td></td>
+<td>0</td>
+<td>features.demo.google.GoogleSearchTest@3e2e18f2</td></tr>
 <tr>
 <td title='features.demo.google.GooglePageTwoTest.testGoogleSearchAnimeTwo()'><b>testGoogleSearchAnimeTwo</b><br>Test class: features.demo.google.GooglePageTwoTest</td>
 <td></td>
-<td>1</td>
-<td>features.demo.google.GooglePageTwoTest@be64738</td></tr>
+<td>2</td>
+<td>features.demo.google.GooglePageTwoTest@cd3fee8</td></tr>
 </table><p>
 </body>
 </html>

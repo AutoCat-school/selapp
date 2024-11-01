@@ -32,7 +32,6 @@ public class GooglePageTwoTest extends GoogleBaseTest {
 
     @Test
     public void testSearchSaiGameTwo() {
-        Report.createTest("Search Sai Game Two");
         this.page.goToHomePage();
 
         String keyword = "Sai Game";

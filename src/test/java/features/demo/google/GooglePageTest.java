@@ -9,7 +9,6 @@ public class GooglePageTest extends GoogleBaseTest {
 
     @Test
     public void testGoogleSearch() {
-        Report.createTest("Google Search");
         this.page.goToHomePage();
 
         String title = this.page.getTitle();
@@ -21,8 +20,6 @@ public class GooglePageTest extends GoogleBaseTest {
 
     @Test
     public void testGoogleSearchAnime() {
-        Report.createTest("Search Anime");
-
         this.page.goToHomePage();
 
         WebElement searchBox = this.page.getSearchBox();
@@ -32,15 +29,12 @@ public class GooglePageTest extends GoogleBaseTest {
         searchButton.click();
 
         this.page.println("GooglePageTest search Anime");
-        Report.pass("Search success");
 
         // this.page.sleepInSecond(3);
     }
 
     @Test
     public void testSearchSaiGame() {
-        Report.createTest("Search Sai Game");
-
         this.page.goToHomePage();
 
         String keyword = "Sai Game";

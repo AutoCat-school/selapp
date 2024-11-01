@@ -9,21 +9,35 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">12,233</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">13,418</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">features.demo.google.GooglePageTest</td><td><a href="#m0">testSearchSaiGame</a></td><td rowspan="1">1730498535872</td><td rowspan="1">2932</td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">features.demo.google.GooglePageTest</td><td><a href="#m1">testGoogleSearch</a></td><td rowspan="1">1730498534511</td><td rowspan="1">467</td></tr><tr class="passedeven"><td><a href="#m2">testGoogleSearchAnime</a></td><td rowspan="1">1730498534978</td><td rowspan="1">893</td></tr><tr class="passedodd"><td rowspan="3">features.demo.google.GooglePageTwoTest</td><td><a href="#m3">testGoogleSearchAnimeTwo</a></td><td rowspan="1">1730498539674</td><td rowspan="1">1161</td></tr><tr class="passedodd"><td><a href="#m4">testGoogleSearchTwo</a></td><td rowspan="1">1730498540836</td><td rowspan="1">223</td></tr><tr class="passedodd"><td><a href="#m5">testSearchSaiGameTwo</a></td><td rowspan="1">1730498541059</td><td rowspan="1">2814</td></tr><tr class="passedeven"><td rowspan="2">features.demo.google.GoogleSearchTest</td><td><a href="#m6">testGoogleSearch</a></td><td rowspan="1">1730498544602</td><td rowspan="1">658</td></tr><tr class="passedeven"><td><a href="#m7">testGoogleSearchAnime</a></td><td rowspan="1">1730498545261</td><td rowspan="1">409</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">features.demo.google.GooglePageTest</td><td><a href="#m0">testGoogleSearch</a></td><td rowspan="1">1730500633827</td><td rowspan="1">457</td></tr><tr class="failedeven"><td><a href="#m1">testSearchSaiGame</a></td><td rowspan="1">1730500635186</td><td rowspan="1">2903</td></tr><tr class="failedodd"><td rowspan="1">features.demo.google.GooglePageTwoTest</td><td><a href="#m2">testSearchSaiGameTwo</a></td><td rowspan="1">1730500641787</td><td rowspan="1">2695</td></tr><tr><th colspan="4">Surefire test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">features.demo.google.GooglePageTest</td><td><a href="#m3">testGoogleSearchAnime</a></td><td rowspan="1">1730500634286</td><td rowspan="1">898</td></tr><tr class="passedodd"><td rowspan="2">features.demo.google.GooglePageTwoTest</td><td><a href="#m4">testGoogleSearchAnimeTwo</a></td><td rowspan="1">1730500638818</td><td rowspan="1">2737</td></tr><tr class="passedodd"><td><a href="#m5">testGoogleSearchTwo</a></td><td rowspan="1">1730500641555</td><td rowspan="1">232</td></tr><tr class="passedeven"><td rowspan="2">features.demo.google.GoogleSearchTest</td><td><a href="#m6">testGoogleSearch</a></td><td rowspan="1">1730500645225</td><td rowspan="1">655</td></tr><tr class="passedeven"><td><a href="#m7">testGoogleSearchAnime</a></td><td rowspan="1">1730500645880</td><td rowspan="1">386</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">features.demo.google.GooglePageTest#testSearchSaiGame</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Keyword not in the result expected [true] but found [false]
-	at core.verify.Verify.isTrue(Verify.java:28)
-	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
-	at features.demo.google.GooglePageTest.testSearchSaiGame(GooglePageTest.java:54)
+<h2>Surefire test</h2><h3 id="m0">features.demo.google.GooglePageTest#testGoogleSearch</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.info(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.info(ReportExtent.java:35)
+	at core.report.Report.info(Report.java:21)
+	at features.demo.google.GooglePageTest.testGoogleSearch(GooglePageTest.java:16)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">features.demo.google.GooglePageTest#testGoogleSearch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">features.demo.google.GooglePageTest#testGoogleSearchAnime</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">features.demo.google.GooglePageTwoTest#testGoogleSearchAnimeTwo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">features.demo.google.GooglePageTwoTest#testGoogleSearchTwo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">features.demo.google.GooglePageTwoTest#testSearchSaiGameTwo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">features.demo.google.GooglePageTest#testSearchSaiGame</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.pass(ReportExtent.java:40)
+	at core.report.Report.pass(Report.java:25)
+	at core.verify.Verify.isTrue(Verify.java:29)
+	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
+	at features.demo.google.GooglePageTest.testSearchSaiGame(GooglePageTest.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">features.demo.google.GooglePageTwoTest#testSearchSaiGameTwo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String)&quot; because the return value of &quot;core.report.ReportExtent.getTest()&quot; is null
+	at core.report.ReportExtent.pass(ReportExtent.java:40)
+	at core.report.Report.pass(Report.java:25)
+	at core.verify.Verify.isTrue(Verify.java:29)
+	at pages.demo.google.GooglePage.verifyResultsHas(GooglePage.java:49)
+	at features.demo.google.GooglePageTwoTest.testSearchSaiGameTwo(GooglePageTwoTest.java:44)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">features.demo.google.GooglePageTest#testGoogleSearchAnime</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">features.demo.google.GooglePageTwoTest#testGoogleSearchAnimeTwo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">features.demo.google.GooglePageTwoTest#testGoogleSearchTwo</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m6">features.demo.google.GoogleSearchTest#testGoogleSearch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m7">features.demo.google.GoogleSearchTest#testGoogleSearchAnime</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
