@@ -28,4 +28,8 @@ public class Report {
     public static void fail(String info) {
         ReportExtent.fail(info);
     }
+
+    public static void skip(String info) {
+        ReportExtent.skip(info);
+    }
 }

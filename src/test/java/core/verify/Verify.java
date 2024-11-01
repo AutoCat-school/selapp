@@ -10,6 +10,7 @@ public class Verify {
 	}
 
 	public static void equals(Object actual, Object expected, String message) {
+
 		try {
 			Assert.assertEquals(actual, expected, message);
 			Report.pass("Verify equals passed");

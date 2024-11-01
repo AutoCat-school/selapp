@@ -13,3 +13,4 @@ features\demo\google\GooglePageTest.class
 features\demo\DemoBaseTest.class
 pages\demo\google\GooglePage.class
 features\demo\google\GoogleSearchTest.class
+core\listener\TestListener.class
