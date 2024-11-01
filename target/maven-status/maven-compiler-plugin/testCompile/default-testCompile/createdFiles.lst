@@ -1,11 +1,14 @@
 pages\demo\google\GoogleImagePage.class
+features\demo\google\GoogleBaseTest.class
 core\abstractpage\AbstractWeb.class
 core\utilities\Utils.class
-features\demo\google\GooglePageTest.class
 core\verify\Verify.class
 core\abstractpage\AbstractDriverIO.class
 core\abstractpage\AbstractBase.class
 core\report\Report.class
-pages\demo\google\GooglePage.class
+features\demo\google\GooglePageTwoTest.class
 core\driver\DriverManager.class
+features\demo\google\GooglePageTest.class
+features\demo\DemoBaseTest.class
+pages\demo\google\GooglePage.class
 features\demo\google\GoogleSearchTest.class

@@ -1,35 +1,9 @@
 package features.demo.google;
 
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import core.driver.DriverManager;
-import features.demo.DemoBaseTest;
-import pages.demo.google.GooglePage;
-
-public class GooglePageTwoTest extends DemoBaseTest {
-
-    protected GooglePage page;
-
-    @BeforeClass
-    public void setUp() {
-        System.out.println("GooglePageTest setUp");
-
-        DriverManager manager = new DriverManager();
-        this.driver = manager.getWebDriver();
-
-        this.page = new GooglePage(this.driver);
-    }
-
-    @AfterClass
-    public void tearDown() {
-        if (this.driver != null) {
-            this.driver.quit();
-        }
-        System.out.println("GooglePageTest tearDown");
-    }
+public class GooglePageTwoTest extends GoogleBaseTest {
 
     @Test
     public void testGoogleSearchTwo() {

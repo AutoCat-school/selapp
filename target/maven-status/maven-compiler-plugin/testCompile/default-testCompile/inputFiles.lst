@@ -5,7 +5,10 @@ E:\Studio\AutoCat\projects\selapp\src\test\java\core\driver\DriverManager.java
 E:\Studio\AutoCat\projects\selapp\src\test\java\core\report\Report.java
 E:\Studio\AutoCat\projects\selapp\src\test\java\core\utilities\Utils.java
 E:\Studio\AutoCat\projects\selapp\src\test\java\core\verify\Verify.java
+E:\Studio\AutoCat\projects\selapp\src\test\java\features\demo\DemoBaseTest.java
+E:\Studio\AutoCat\projects\selapp\src\test\java\features\demo\google\GoogleBaseTest.java
 E:\Studio\AutoCat\projects\selapp\src\test\java\features\demo\google\GooglePageTest.java
+E:\Studio\AutoCat\projects\selapp\src\test\java\features\demo\google\GooglePageTwoTest.java
 E:\Studio\AutoCat\projects\selapp\src\test\java\features\demo\google\GoogleSearchTest.java
 E:\Studio\AutoCat\projects\selapp\src\test\java\pages\demo\google\GoogleImagePage.java
 E:\Studio\AutoCat\projects\selapp\src\test\java\pages\demo\google\GooglePage.java
