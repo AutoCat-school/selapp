@@ -3,8 +3,6 @@ package features.demo.google;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import core.report.Report;
-
 public class GooglePageTwoTest extends GoogleBaseTest {
 
     @Test

@@ -3,8 +3,6 @@ package features.demo.google;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import core.report.Report;
-
 public class GooglePageTest extends GoogleBaseTest {
 
     @Test
@@ -13,7 +11,6 @@ public class GooglePageTest extends GoogleBaseTest {
 
         String title = this.page.getTitle();
         this.page.println("Page title is: " + title);
-        Report.info("Page title is: " + title);
 
         // this.page.sleepInSecond(3);
     }
