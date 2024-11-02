@@ -11,7 +11,7 @@ public abstract class GoogleBaseTest extends DemoBaseTest {
 
     @BeforeClass
     public void setUp() {
-        System.out.println("GoogleBaseTest setUp");
+        System.out.println("==> GoogleBaseTest setUp ====");
         super.setUp();
         this.page = new GooglePage(this.driver);
     }

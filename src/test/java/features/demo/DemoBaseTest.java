@@ -13,7 +13,7 @@ public abstract class DemoBaseTest {
 
     @BeforeClass
     public void setUp() {
-        System.out.println("DemoBaseTest setUp");
+        System.out.println("==> DemoBaseTest setUp ===========");
 
         this.driverManager = new DriverManager();
         this.driver = this.driverManager.getWebDriver();
@@ -21,10 +21,8 @@ public abstract class DemoBaseTest {
 
     @AfterClass
     public void tearDown() {
-        if (this.driver != null) {
-            this.driver.quit();
-        }
+        // this.driverManager.quitAllDrivers();
 
-        System.out.println("DemoBaseTest tearDown");
+        System.out.println("==< DemoBaseTest tearDown =======");
     }
 }

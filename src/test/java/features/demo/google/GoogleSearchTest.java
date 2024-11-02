@@ -16,7 +16,7 @@ public class GoogleSearchTest {
 
     @BeforeClass
     public void setUp() {
-        System.out.println("GoogleSearchTest setUp");
+        System.out.println("==> GoogleSearchTest setUp");
 
         DriverManager manager = new DriverManager();
         this.driver = manager.getWebDriver();
@@ -24,10 +24,10 @@ public class GoogleSearchTest {
 
     @AfterClass
     public void tearDown() {
-        if (this.driver != null) {
-            this.driver.quit();
-        }
-        System.out.println("GoogleSearchTest tearDown");
+        // if (this.driver != null) {
+        // this.driver.quit();
+        // }
+        System.out.println("<== GoogleSearchTest tearDown");
     }
 
     @Test
