@@ -9,13 +9,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import core.utilities.Config;
+
 public abstract class AbstractDriverIO extends AbstractBase {
     protected WebDriver driver;
     protected WebDriverWait explicitDriverWait;
 
     public AbstractDriverIO(WebDriver driver) {
         this.driver = driver;
-        this.explicitDriverWait = new WebDriverWait(this.driver, java.time.Duration.ofSeconds(10));
+        int waitTime = Config.getInt("wait.timeout");
+        this.explicitDriverWait = new WebDriverWait(this.driver, java.time.Duration.ofSeconds(waitTime));
     }
 
     public WebDriver getDriver() {

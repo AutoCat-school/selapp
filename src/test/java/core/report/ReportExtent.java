@@ -14,7 +14,8 @@ public class ReportExtent {
     public static synchronized ExtentReports getExtentReports() {
         if (ReportExtent.extent == null) {
             ReportExtent.extent = new ExtentReports();
-            ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/extent-report/ExtentReport.html");
+            String reportPath = Config.get("extent.report.path");
+            ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
 
             if (Config.getBool("extent.report.theme.dark")) {
                 sparkReporter.config().setTheme(Theme.DARK);

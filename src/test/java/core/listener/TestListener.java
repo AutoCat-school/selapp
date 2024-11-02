@@ -29,13 +29,13 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         if (Config.getBool("listener.report.pass")) {
-            Report.pass("Success: " + result.getMethod().getMethodName());
+            Report.pass("Passed: " + result.getMethod().getMethodName());
         }
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        String format = "Failure: %s - %s";
+        String format = "Fail: %s - %s";
         String message = String.format(format, result.getMethod().getMethodName(), result.getThrowable());
         if (Config.getBool("listener.report.fail")) {
             Report.fail(message);
