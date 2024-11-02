@@ -5,6 +5,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import core.utilities.Config;
+
 public class ReportExtent {
     private static ExtentReports extent;
     private static ThreadLocal<ExtentTest> testThread = new ThreadLocal<>();
@@ -12,8 +14,12 @@ public class ReportExtent {
     public static synchronized ExtentReports getExtentReports() {
         if (ReportExtent.extent == null) {
             ReportExtent.extent = new ExtentReports();
-            ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/extent-report/ExtentReport.html");
-            sparkReporter.config().setTheme(Theme.DARK); // TODO: set in config
+            String reportPath = Config.get("extent.report.path");
+            ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
+
+            if (Config.getBool("extent.report.theme.dark")) {
+                sparkReporter.config().setTheme(Theme.DARK);
+            }
             ReportExtent.extent.attachReporter(sparkReporter);
         }
         return ReportExtent.extent;
