@@ -5,10 +5,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import core.driver.DriverManager;
+import core.driver.DriverType;
 
 public abstract class DemoBaseTest {
 
     protected WebDriver driver;
+    protected WebDriver driverChrome;
+    protected WebDriver driverApi;
+    protected WebDriver driverAndroid;
+    protected WebDriver driverAndroid2;
     protected DriverManager manager;
 
     @BeforeClass
@@ -21,8 +26,8 @@ public abstract class DemoBaseTest {
 
     @AfterClass
     public void tearDown() {
-        // this.driverManager.quitAllDrivers();
-        this.manager.quitDriver(this.driver);
+        this.manager.quitAllDrivers();
+        // this.manager.quitDriver(this.driver);
 
         System.out.println("<== DemoBaseTest tearDown =======");
     }

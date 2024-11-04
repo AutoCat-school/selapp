@@ -37,7 +37,7 @@ public class DriverManager {
         }
     }
 
-    public String getThreadKey(String key) {
+    protected String getThreadKey(String key) {
         long threadId = Thread.currentThread().threadId();
         return String.format("thread-%d-%s", threadId, key);
     }
@@ -81,8 +81,9 @@ public class DriverManager {
     }
 
     public void quitDriver(WebDriver driver) {
-        if (driver == null)
+        if (driver == null) {
             return;
+        }
 
         Report.println("#quitDriver: " + driver);
         String keyToRemove = null;
