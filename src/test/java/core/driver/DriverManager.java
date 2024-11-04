@@ -2,6 +2,7 @@ package core.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import core.report.Report;
@@ -10,15 +11,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DriverManager {
-    private static ThreadLocal<Map<String, WebDriver>> drivers = ThreadLocal.withInitial(HashMap::new);
+    private ThreadLocal<Map<String, WebDriver>> drivers = ThreadLocal.withInitial(HashMap::new);
 
-    public static void setDriver(String key, DriverType driverType) {
+    public void setDriver(String key, DriverType driverType) {
         Map<String, WebDriver> driverMap = drivers.get();
 
         if (!driverMap.containsKey(key)) {
             switch (driverType) {
                 case CHROME:
-                    driverMap.put(key, new ChromeDriver());
+                    ChromeOptions options = new ChromeOptions();
+                    driverMap.put(key, new ChromeDriver(options));
                     break;
                 case FIREFOX:
                     driverMap.put(key, new FirefoxDriver());
@@ -35,12 +37,12 @@ public class DriverManager {
         }
     }
 
-    public static String getThreadKey(String key) {
+    public String getThreadKey(String key) {
         long threadId = Thread.currentThread().threadId();
         return String.format("thread-%d-%s", threadId, key);
     }
 
-    public static WebDriver getWebDriver() {
+    public WebDriver getWebDriver() {
         String key = getThreadKey("web");
         Report.println("#getWebDriver: " + key);
         WebDriver driver = getDriver(key);
@@ -52,11 +54,11 @@ public class DriverManager {
         return driver;
     }
 
-    public static WebDriver getDriver(String key) {
+    public WebDriver getDriver(String key) {
         return drivers.get().get(key);
     }
 
-    public static void quitAllDrivers() {
+    public void quitAllDrivers() {
         Report.println("#quitAllDrivers");
         Map<String, WebDriver> driverMap = drivers.get();
         for (WebDriver driver : driverMap.values()) {
@@ -67,7 +69,7 @@ public class DriverManager {
         driverMap.clear();
     }
 
-    public static void quitDriver(String key) {
+    public void quitDriver(String key) {
         Report.println("#quitDriver: " + key);
 
         Map<String, WebDriver> driverMap = drivers.get();
@@ -78,7 +80,7 @@ public class DriverManager {
         }
     }
 
-    public static void quitDriver(WebDriver driver) {
+    public void quitDriver(WebDriver driver) {
         if (driver == null)
             return;
 

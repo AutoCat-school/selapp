@@ -9,18 +9,20 @@ import core.driver.DriverManager;
 public abstract class DemoBaseTest {
 
     protected WebDriver driver;
+    protected DriverManager manager;
 
     @BeforeClass
     public void setUp() {
         System.out.println("====> DemoBaseTest setUp ===========");
 
-        this.driver = DriverManager.getWebDriver();
+        this.manager = new DriverManager();
+        this.driver = manager.getWebDriver();
     }
 
     @AfterClass
     public void tearDown() {
         // this.driverManager.quitAllDrivers();
-        DriverManager.quitDriver(this.driver);
+        this.manager.quitDriver(this.driver);
 
         System.out.println("<== DemoBaseTest tearDown =======");
     }
