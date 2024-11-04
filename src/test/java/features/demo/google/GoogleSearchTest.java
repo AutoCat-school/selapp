@@ -16,17 +16,14 @@ public class GoogleSearchTest {
 
     @BeforeClass
     public void setUp() {
-        System.out.println("==> GoogleSearchTest setUp");
+        System.out.println("====> GoogleSearchTest setUp");
 
-        DriverManager manager = new DriverManager();
-        this.driver = manager.getWebDriver();
+        this.driver = DriverManager.getWebDriver();
     }
 
     @AfterClass
     public void tearDown() {
-        // if (this.driver != null) {
-        // this.driver.quit();
-        // }
+        DriverManager.quitDriver(this.driver);
         System.out.println("<== GoogleSearchTest tearDown");
     }
 

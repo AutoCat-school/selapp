@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DriverManager {
-    private ThreadLocal<Map<String, WebDriver>> drivers = ThreadLocal.withInitial(HashMap::new);
+    private static ThreadLocal<Map<String, WebDriver>> drivers = ThreadLocal.withInitial(HashMap::new);
 
-    public void setDriver(String key, DriverType driverType) {
+    public static void setDriver(String key, DriverType driverType) {
         Map<String, WebDriver> driverMap = drivers.get();
 
         if (!driverMap.containsKey(key)) {
@@ -35,29 +35,29 @@ public class DriverManager {
         }
     }
 
-    protected String getThreadKey(String key) {
+    public static String getThreadKey(String key) {
         long threadId = Thread.currentThread().threadId();
         return String.format("thread-%d-%s", threadId, key);
     }
 
-    public WebDriver getWebDriver() {
-        String key = this.getThreadKey("web");
-        Report.println("getWebDriver: " + key);
-        WebDriver driver = this.getDriver(key);
+    public static WebDriver getWebDriver() {
+        String key = getThreadKey("web");
+        Report.println("#getWebDriver: " + key);
+        WebDriver driver = getDriver(key);
         if (driver == null) {
-            Report.println("setDriver: NEW");
-            this.setDriver(key, DriverType.CHROME);
-            driver = this.getDriver(key);
+            Report.println("#setDriver: NEW");
+            setDriver(key, DriverType.CHROME);
+            driver = getDriver(key);
         }
         return driver;
     }
 
-    public WebDriver getDriver(String key) {
+    public static WebDriver getDriver(String key) {
         return drivers.get().get(key);
     }
 
-    public void quitAllDrivers() {
-        Report.println("quitAllDrivers");
+    public static void quitAllDrivers() {
+        Report.println("#quitAllDrivers");
         Map<String, WebDriver> driverMap = drivers.get();
         for (WebDriver driver : driverMap.values()) {
             if (driver != null) {
@@ -67,14 +67,34 @@ public class DriverManager {
         driverMap.clear();
     }
 
-    public void quitDriver(String key) {
-        Report.println("quitDriver: " + key);
+    public static void quitDriver(String key) {
+        Report.println("#quitDriver: " + key);
 
         Map<String, WebDriver> driverMap = drivers.get();
         WebDriver driver = driverMap.get(key);
         if (driver != null) {
             driver.quit();
             driverMap.remove(key);
+        }
+    }
+
+    public static void quitDriver(WebDriver driver) {
+        if (driver == null)
+            return;
+
+        Report.println("#quitDriver: " + driver);
+        String keyToRemove = null;
+        Map<String, WebDriver> driverMap = drivers.get();
+        for (Map.Entry<String, WebDriver> entry : driverMap.entrySet()) {
+            if (entry.getValue().equals(driver)) {
+                keyToRemove = entry.getKey();
+                break;
+            }
+        }
+
+        if (keyToRemove != null) {
+            driver.quit();
+            driverMap.remove(keyToRemove);
         }
     }
 }

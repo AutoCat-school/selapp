@@ -25,6 +25,7 @@ public class TestListener implements ITestListener {
     public void onTestStart(ITestResult result) {
         String testName = getTestName(result);
         Report.createTest(testName);
+        Report.println("-- Test Start: " + testName);
         Report.info("Start: " + testName);
     }
 
