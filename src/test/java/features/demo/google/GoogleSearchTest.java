@@ -13,21 +13,20 @@ import core.driver.DriverManager;
 public class GoogleSearchTest {
 
     protected WebDriver driver;
+    protected DriverManager manager;
 
     @BeforeClass
     public void setUp() {
-        System.out.println("GoogleSearchTest setUp");
+        System.out.println("====> GoogleSearchTest setUp");
 
-        DriverManager manager = new DriverManager();
-        this.driver = manager.getWebDriver();
+        this.manager = new DriverManager();
+        this.driver = this.manager.getWebDriver();
     }
 
     @AfterClass
     public void tearDown() {
-        if (this.driver != null) {
-            this.driver.quit();
-        }
-        System.out.println("GoogleSearchTest tearDown");
+        this.manager.quitDriver(this.driver);
+        System.out.println("<== GoogleSearchTest tearDown");
     }
 
     @Test

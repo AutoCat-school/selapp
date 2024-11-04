@@ -40,6 +40,9 @@ public class GooglePageTwoTest extends GoogleBaseTest {
         searchButton.click();
 
         this.page.verifyResultsHas(keyword);
+        // this.page.verifyResultsHas(keyword);
+        // this.page.verifyResultsHas("wrong");
+
         // this.page.sleepInSecond(1);
     }
 }
