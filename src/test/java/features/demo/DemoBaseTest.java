@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import core.driver.DriverManager;
+import core.report.ReportExtent;
 
 public abstract class DemoBaseTest {
 
@@ -23,6 +24,7 @@ public abstract class DemoBaseTest {
     public void tearDown() {
         this.manager.quitAllDrivers();
         // this.manager.quitDriver(this.driver);
+        ReportExtent.flushReports();
 
         System.out.println("<== DemoBaseTest tearDown =======");
     }

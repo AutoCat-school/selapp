@@ -7,7 +7,6 @@
     <test name="Google Feature Tests">
         <classes>
             <class name="features.demo.google.GooglePageTest"/>
-            <class name="features.demo.google.GooglePageTwoTest"/>
             <class name="features.demo.google.GoogleSearchTest"/>
         </classes>
     </test>
