@@ -1,8 +1,10 @@
 package core.report;
 
+import core.utilities.Utils;
+
 public class Report {
     public static void println(String log) {
-        System.out.println(log);
+        Utils.println(log);
     }
 
     public static void setUp() {

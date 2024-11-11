@@ -6,6 +6,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import core.utilities.Config;
+import core.utilities.Utils;
 
 public class ReportExtent {
     private static ExtentReports extent;
@@ -32,7 +33,13 @@ public class ReportExtent {
     }
 
     public static ExtentTest getTest() {
-        return ReportExtent.testThread.get();
+        ExtentTest testCase = ReportExtent.testThread.get();
+        if (testCase == null) {
+            // testCase = getExtentReports().createTest("DummyTestCase");
+            String warning = "Extent report was not created. Please ensure your test class is executed with a Listener.";
+            Utils.printWarning(warning);
+        }
+        return testCase;
     }
 
     public static synchronized void flushReports() {
