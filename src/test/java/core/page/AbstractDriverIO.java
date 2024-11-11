@@ -1,4 +1,4 @@
-package core.abstractpage;
+package core.page;
 
 import java.util.List;
 import org.openqa.selenium.By;

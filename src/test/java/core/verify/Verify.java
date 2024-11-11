@@ -17,11 +17,12 @@ public class Verify {
 		try {
 			Assert.assertEquals(actual, expected, message);
 			if (Config.getBool(Verify.configName)) {
-				Report.pass("Verify equals passed");
+				String pattern = "Verify passed, [%s] equals [%s]";
+				Report.pass(String.format(pattern, actual, expected));
 			}
 		} catch (AssertionError e) {
 			if (Config.getBool(Verify.configName)) {
-				Report.fail("Verify equals fail " + e.getMessage());
+				Report.fail("Verify equals fail, " + e.getMessage());
 			}
 			throw e;
 		}
