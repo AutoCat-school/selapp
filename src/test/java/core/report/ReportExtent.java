@@ -35,7 +35,7 @@ public class ReportExtent {
     public static ExtentTest getTest() {
         ExtentTest testCase = ReportExtent.testThread.get();
         if (testCase == null) {
-            // testCase = getExtentReports().createTest("DummyTestCase");
+            testCase = getExtentReports().createTest("DummyTestCase");
             String warning = "Extent report was not created. Please ensure your test class is executed with a Listener.";
             Utils.printWarning(warning);
         }

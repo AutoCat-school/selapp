@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-//@Listeners(core.listener.TestListener.class)
+@Listeners(core.listener.TestListener.class)
 public class GooglePageTest extends GoogleBaseTest {
 
     @Test
