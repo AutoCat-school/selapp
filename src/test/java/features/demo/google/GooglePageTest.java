@@ -1,8 +1,10 @@
 package features.demo.google;
 
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(core.listener.TestListener.class)
 public class GooglePageTest extends GoogleBaseTest {
 
     @Test
@@ -25,7 +27,7 @@ public class GooglePageTest extends GoogleBaseTest {
         WebElement searchButton = this.page.getSearchButton();
         searchButton.click();
 
-        this.page.println("GooglePageTest search Anime");
+        // this.page.println("GooglePageTest search Anime");
 
         // this.page.sleepInSecond(3);
     }
@@ -42,12 +44,6 @@ public class GooglePageTest extends GoogleBaseTest {
         searchButton.click();
 
         this.page.verifyResultsHas(keyword);
-
-        // List<WebElement> elements = this.page.getSearchResults();
-        // WebElement firstElement = elements.get(0);
-        // String textResult = firstElement.getText();
-        // Verify.equals(textResult, keyword);
-        // this.page.println("firstElement: " + firstElement.getText());
 
         // this.page.sleepInSecond(1);
     }
