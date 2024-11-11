@@ -20,6 +20,6 @@ public class Utils {
     }
 
     public static void printWarning(String log) {
-        println("\u001B[33m" + log + "\u001B[0m");
+        println("\u001B[33mWarning: " + log + "\u001B[0m");
     }
 }

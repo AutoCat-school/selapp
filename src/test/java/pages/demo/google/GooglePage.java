@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import core.abstractpage.AbstractWeb;
+import core.page.AbstractWeb;
 import core.verify.Verify;
 
 public class GooglePage extends AbstractWeb {

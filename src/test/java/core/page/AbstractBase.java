@@ -1,4 +1,4 @@
-package core.abstractpage;
+package core.page;
 
 import core.report.Report;
 import core.utilities.Utils;
