@@ -27,7 +27,7 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
         this.page.hasChannel(keyword);
 
         int instanceId = System.identityHashCode(this.page);
-        this.page.println("Instance ID: " + instanceId);
+        this.page.println("Page ID: " + instanceId);
 
         // this.page.sleepInSecond(1);
     }
@@ -40,10 +40,10 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
 
         youtubePage.goToHomePage();
         youtubePage.search(keyword);
-        youtubePage.hasChannel("AutoCat");
+        youtubePage.hasChannel("Auto Cat");
 
         int instanceId = System.identityHashCode(youtubePage);
-        this.page.println("Instance ID: " + instanceId);
+        this.page.println("Page ID: " + instanceId);
 
         // youtubePage.sleepInSecond(1);
     }
