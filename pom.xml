@@ -65,7 +65,7 @@
         <version>${maven.plugin.version}</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testngGoogle.xml</suiteXmlFile>
+            <suiteXmlFile>webBaseTest.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>

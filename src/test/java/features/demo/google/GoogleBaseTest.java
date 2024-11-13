@@ -2,11 +2,11 @@ package features.demo.google;
 
 import org.testng.annotations.BeforeClass;
 
+import core.page.WebBaseTest;
 import core.utilities.Utils;
-import features.demo.DemoBaseTest;
 import pages.demo.google.GooglePage;
 
-public abstract class GoogleBaseTest extends DemoBaseTest {
+public abstract class GoogleBaseTest extends WebBaseTest {
 
     protected GooglePage page;
 

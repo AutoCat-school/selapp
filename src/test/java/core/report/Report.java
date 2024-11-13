@@ -1,5 +1,6 @@
 package core.report;
 
+import org.openqa.selenium.WebDriver;
 import core.utilities.Utils;
 
 public class Report {
@@ -33,5 +34,9 @@ public class Report {
 
     public static void skip(String info) {
         ReportExtent.skip(info);
+    }
+
+    public static void screenshot(WebDriver driver, Log log) {
+        ReportExtent.screenshot(driver, log);
     }
 }

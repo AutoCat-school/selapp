@@ -10,13 +10,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import core.utilities.Config;
+import core.verify.Verify;
 
 public abstract class AbstractDriverIO extends AbstractBase {
+    protected Verify verify;
     protected WebDriver driver;
     protected WebDriverWait explicitDriverWait;
 
     public AbstractDriverIO(WebDriver driver) {
         this.driver = driver;
+        this.verify = new Verify(driver);
         int waitTime = Config.getInt("wait.timeout");
         this.explicitDriverWait = new WebDriverWait(this.driver, java.time.Duration.ofSeconds(waitTime));
     }

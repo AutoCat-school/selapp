@@ -1,5 +1,9 @@
 package core.report;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -63,5 +67,35 @@ public class ReportExtent {
     public static void skip(String info) {
         info = String.format("<span class='text-warning'>%s</span>", info);
         ReportExtent.getTest().skip(info);
+    }
+
+    public static void screenshot(WebDriver driver, Log log) {
+        ExtentTest extentTest = ReportExtent.getTest();
+
+        if (extentTest == null) {
+            return;
+        }
+
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        String source = "data:image/png;base64," + ts.getScreenshotAs(OutputType.BASE64);
+        String html = "";
+        html += "<a href='" + source + "' data-featherlight='image'>";
+        html += "<img style='width: 70%' src='" + source + "'/>";
+        html += "</a>";
+        extentTest.log(getExtStatus(log), html);
+    }
+
+    public static com.aventstack.extentreports.Status getExtStatus(Log status) {
+        switch (status) {
+            case PASS:
+                return com.aventstack.extentreports.Status.PASS;
+            case FAIL:
+                return com.aventstack.extentreports.Status.FAIL;
+            case WARNING:
+                return com.aventstack.extentreports.Status.WARNING;
+            case INFO:
+            default:
+                return com.aventstack.extentreports.Status.INFO;
+        }
     }
 }

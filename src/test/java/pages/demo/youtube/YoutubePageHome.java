@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import core.report.Report;
-import core.verify.Verify;
 
 public class YoutubePageHome extends YoutubePage {
 
@@ -30,6 +29,6 @@ public class YoutubePageHome extends YoutubePage {
         Report.info("hasChannel: " + keyword);
         WebElement channelTitle = this.findVisibleElement(this.byChannelTitle);
         String title = channelTitle.getText();
-        Verify.contains(title, keyword);
+        this.verify.contains(title, keyword);
     }
 }

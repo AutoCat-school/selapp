@@ -2,11 +2,12 @@ package features.demo.youtube;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import core.page.WebBaseTest;
 import core.utilities.Utils;
-import features.demo.DemoBaseTest;
 import pages.demo.youtube.YoutubePageHome;
 
-public class YoutubeHomeBaseTest extends DemoBaseTest {
+public class YoutubeHomeBaseTest extends WebBaseTest {
 
     protected YoutubePageHome page;
 
@@ -26,25 +27,24 @@ public class YoutubeHomeBaseTest extends DemoBaseTest {
         this.page.hasChannel(keyword);
 
         int instanceId = System.identityHashCode(this.page);
-        System.out.println("Instance ID: " + instanceId);
+        this.page.println("Page ID: " + instanceId);
 
         // this.page.sleepInSecond(1);
     }
 
     @Test
     public void testYoutubeSelenium() {
-        String keyword = "Selenium";
+        String keyword = "@AutoCat24";
 
         YoutubePageHome youtubePage = this.pageGenerator.getPage(YoutubePageHome.class);
 
         youtubePage.goToHomePage();
         youtubePage.search(keyword);
-        youtubePage.hasChannel(keyword);
+        youtubePage.hasChannel("Auto Cat");
 
         int instanceId = System.identityHashCode(youtubePage);
-        System.out.println("Instance ID: " + instanceId);
+        this.page.println("Page ID: " + instanceId);
 
         // youtubePage.sleepInSecond(1);
     }
-
 }
