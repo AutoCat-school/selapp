@@ -1,16 +1,20 @@
 package core.listener;
 
+import core.page.WebBaseTest;
 import core.report.Log;
 import core.report.Report;
 import core.utilities.Config;
 import core.utilities.Utils;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class TestListener implements ITestListener {
+public class WebBaseListener implements ITestListener {
     private static String configName = "listener.report";
+    private static String configScreenShotOnPass = "listener.screenshot.on.pass";
+    private static String configScreenShotOnFalse = "listener.screenshot.on.false";
 
     @Override
     public void onStart(ITestContext context) {
@@ -32,10 +36,12 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        if (Config.getBool(TestListener.configName)) {
+        if (Config.getBool(WebBaseListener.configName)) {
             Report.pass("Passed: " + getTestName(result));
 
-            if (this.screenshotOnPass) {
+            if (Config.getBool(WebBaseListener.configScreenShotOnPass)) {
+                ITestContext context = result.getTestContext();
+                WebDriver driver = (WebDriver) context.getAttribute(WebBaseTest.DefaultDriver);
                 Report.screenshot(driver, Log.PASS);
             }
         }
@@ -45,8 +51,14 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         String format = "Fail: %s - %s";
         String message = String.format(format, getTestName(result), result.getThrowable());
-        if (Config.getBool(TestListener.configName)) {
+        if (Config.getBool(WebBaseListener.configName)) {
             Report.fail(message);
+
+            if (Config.getBool(WebBaseListener.configScreenShotOnFalse)) {
+                ITestContext context = result.getTestContext();
+                WebDriver driver = (WebDriver) context.getAttribute(WebBaseTest.DefaultDriver);
+                Report.screenshot(driver, Log.FAIL);
+            }
         }
     }
 

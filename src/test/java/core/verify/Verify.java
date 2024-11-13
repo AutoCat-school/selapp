@@ -126,7 +126,7 @@ public class Verify {
 	public void notTrue(boolean condition, String message) {
 		try {
 			Assert.assertFalse(condition, message);
-			if (Config.getBool(Verify.configReportResult) && this.reportVerifyIsTrue) {
+			if (Config.getBool(this.configReportResult) && this.reportVerifyIsTrue) {
 				Report.pass("Verify notTrue passed");
 
 				if (this.screenshotOnPass) {
@@ -134,7 +134,7 @@ public class Verify {
 				}
 			}
 		} catch (AssertionError e) {
-			if (Config.getBool(Verify.configReportResult)) {
+			if (Config.getBool(this.configReportResult)) {
 				Report.fail("Verify notTrue fail " + e.getMessage());
 
 				if (this.screenshotOnFalse) {

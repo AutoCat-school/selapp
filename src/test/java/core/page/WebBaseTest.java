@@ -1,15 +1,19 @@
 package core.page;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 import core.driver.DriverManager;
 import core.utilities.Utils;
 
-@Listeners(core.listener.TestListener.class)
+@Listeners(core.listener.WebBaseListener.class)
 public abstract class WebBaseTest {
+
+    public static String DefaultDriver = "DefaultDriver";
 
     protected WebDriver driver;
     protected DriverManager driverManager;
@@ -31,5 +35,10 @@ public abstract class WebBaseTest {
         // this.manager.quitDriver(this.driver);
 
         Utils.println("<== WebBase tearDown =======");
+    }
+
+    @BeforeMethod
+    public void setup(ITestContext context) {
+        context.setAttribute(WebBaseTest.DefaultDriver, this.driver);
     }
 }
