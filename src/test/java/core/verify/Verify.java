@@ -1,9 +1,10 @@
 package core.verify;
 
+import java.util.regex.Matcher;
 import org.testng.Assert;
-
 import core.report.Report;
 import core.utilities.Config;
+import java.util.regex.Pattern;
 
 public class Verify {
 	private static String configName = "verify.report";
@@ -34,15 +35,19 @@ public class Verify {
 
 	public static void contains(String actual, String expected, String message) {
 		try {
-			Assert.assertTrue(actual.contains(expected), message);
+			Pattern pattern = Pattern.compile(Pattern.quote(expected));
+			Matcher matcher = pattern.matcher(actual);
+
+			Assert.assertTrue(matcher.find(), message);
+
 			if (Config.getBool(Verify.configName)) {
-				String pattern = "Verify passed, [%s] contains [%s]";
-				Report.pass(String.format(pattern, actual, expected));
+				String passPattern = "Verify passed, [%s] contains [%s]";
+				Report.pass(String.format(passPattern, actual, expected));
 			}
 		} catch (AssertionError e) {
 			if (Config.getBool(Verify.configName)) {
-				String pattern = "Verify fail, [%s] not contains [%s]";
-				Report.fail(String.format(pattern, actual, expected));
+				String failPattern = "Verify fail, [%s] not contains [%s]";
+				Report.fail(String.format(failPattern, actual, expected));
 			}
 			throw e;
 		}
