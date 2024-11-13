@@ -1,7 +1,6 @@
 package core.report;
 
 import org.openqa.selenium.WebDriver;
-
 import core.utilities.Utils;
 
 public class Report {

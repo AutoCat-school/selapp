@@ -75,7 +75,7 @@ public class Verify {
 				Report.pass(String.format(passPattern, actual, expected));
 
 				if (this.screenshotOnPass) {
-					Report.screenshot(driver, Log.PASS);
+					Report.screenshot(this.driver, Log.PASS);
 				}
 			}
 		} catch (
@@ -84,10 +84,9 @@ public class Verify {
 			if (this.reportVerifyResult) {
 				String failPattern = "Verify fail, [%s] not contains [%s]";
 				Report.fail(String.format(failPattern, actual, expected));
-				Report.screenshot(driver, Log.FAIL);
 
 				if (this.screenshotOnFalse) {
-					Report.screenshot(driver, Log.FAIL);
+					Report.screenshot(this.driver, Log.FAIL);
 				}
 			}
 			throw e;

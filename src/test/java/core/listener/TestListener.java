@@ -1,5 +1,6 @@
 package core.listener;
 
+import core.report.Log;
 import core.report.Report;
 import core.utilities.Config;
 import core.utilities.Utils;
@@ -33,6 +34,10 @@ public class TestListener implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         if (Config.getBool(TestListener.configName)) {
             Report.pass("Passed: " + getTestName(result));
+
+            if (this.screenshotOnPass) {
+                Report.screenshot(driver, Log.PASS);
+            }
         }
     }
 

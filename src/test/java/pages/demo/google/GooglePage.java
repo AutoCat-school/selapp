@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import core.page.AbstractWeb;
-import core.verify.Verify;
 
 public class GooglePage extends AbstractWeb {
 
@@ -46,6 +45,6 @@ public class GooglePage extends AbstractWeb {
                 break;
             }
         }
-        Verify.isTrue(hasResult, "Keyword not in the result");
+        this.verify.isTrue(hasResult, "Keyword not in the result");
     }
 }
