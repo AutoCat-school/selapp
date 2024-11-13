@@ -28,6 +28,26 @@ public class Verify {
 		}
 	}
 
+	public static void contains(String actual, String expected) {
+		Verify.contains(actual, expected, null);
+	}
+
+	public static void contains(String actual, String expected, String message) {
+		try {
+			Assert.assertTrue(actual.contains(expected), message);
+			if (Config.getBool(Verify.configName)) {
+				String pattern = "Verify passed, [%s] contains [%s]";
+				Report.pass(String.format(pattern, actual, expected));
+			}
+		} catch (AssertionError e) {
+			if (Config.getBool(Verify.configName)) {
+				String pattern = "Verify fail, [%s] not contains [%s]";
+				Report.fail(String.format(pattern, actual, expected));
+			}
+			throw e;
+		}
+	}
+
 	public static void isTrue(boolean condition) {
 		Verify.isTrue(condition, null);
 	}

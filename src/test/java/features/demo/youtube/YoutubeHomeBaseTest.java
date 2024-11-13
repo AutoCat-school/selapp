@@ -15,13 +15,28 @@ public class YoutubeHomeBaseTest extends DemoBaseTest {
     public void setUp() {
         Utils.println("====> GoogleBaseTest setUp ====");
         super.setUp();
-        this.page = this.pageGenerator.getPage(YoutubePageHome.class);
+        this.page = new YoutubePageHome(this.driver);
     }
 
     @Test
     public void testYoutubeSearch() {
+        String keyword = "Sai Game";
+
         this.page.goToHomePage();
-        this.page.search("Sai Game");
-        // this.page.sleepInSecond(3);
+        this.page.search(keyword);
+        this.page.hasChannel(keyword);
+
+        this.page.sleepInSecond(1);
+    }
+
+    @Test
+    public void testYoutubeSelenium() {
+        String keyword = "Selenium";
+
+        this.page.goToHomePage();
+        this.page.search(keyword);
+        this.page.hasChannel(keyword);
+
+        this.page.sleepInSecond(1);
     }
 }
