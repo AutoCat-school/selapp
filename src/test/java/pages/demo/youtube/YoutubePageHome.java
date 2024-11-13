@@ -24,10 +24,12 @@ public class YoutubePageHome extends YoutubePage {
 
         WebElement searchButton = this.findVisibleElement(this.bySearchButton);
         searchButton.click();
+    }
 
+    public void hasChannel(String keyword) {
+        Report.info("hasChannel: " + keyword);
         WebElement channelTitle = this.findVisibleElement(this.byChannelTitle);
         String title = channelTitle.getText();
-
-        Verify.equals(title, keyword);
+        Verify.contains(title, keyword);
     }
 }

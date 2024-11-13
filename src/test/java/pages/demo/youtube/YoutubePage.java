@@ -6,8 +6,6 @@ import core.page.AbstractWeb;
 
 public abstract class YoutubePage extends AbstractWeb {
 
-    // private By byKeywordInput = this.byDynamic("textarea", "name", "q");
-
     public YoutubePage(WebDriver driver) {
         super(driver);
     }
