@@ -2,7 +2,6 @@ package features.demo.youtube;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import core.utilities.Utils;
 import features.demo.DemoBaseTest;
 import pages.demo.youtube.YoutubePageHome;
@@ -15,7 +14,7 @@ public class YoutubeHomeBaseTest extends DemoBaseTest {
     public void setUp() {
         Utils.println("====> GoogleBaseTest setUp ====");
         super.setUp();
-        this.page = new YoutubePageHome(this.driver);
+        this.page = this.pageGenerator.getPage(YoutubePageHome.class);
     }
 
     @Test
@@ -26,17 +25,26 @@ public class YoutubeHomeBaseTest extends DemoBaseTest {
         this.page.search(keyword);
         this.page.hasChannel(keyword);
 
-        this.page.sleepInSecond(1);
+        int instanceId = System.identityHashCode(this.page);
+        System.out.println("Instance ID: " + instanceId);
+
+        // this.page.sleepInSecond(1);
     }
 
     @Test
     public void testYoutubeSelenium() {
         String keyword = "Selenium";
 
-        this.page.goToHomePage();
-        this.page.search(keyword);
-        this.page.hasChannel(keyword);
+        YoutubePageHome youtubePage = this.pageGenerator.getPage(YoutubePageHome.class);
 
-        this.page.sleepInSecond(1);
+        youtubePage.goToHomePage();
+        youtubePage.search(keyword);
+        youtubePage.hasChannel(keyword);
+
+        int instanceId = System.identityHashCode(youtubePage);
+        System.out.println("Instance ID: " + instanceId);
+
+        // youtubePage.sleepInSecond(1);
     }
+
 }

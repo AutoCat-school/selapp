@@ -13,22 +13,22 @@ import core.utilities.Utils;
 public abstract class DemoBaseTest {
 
     protected WebDriver driver;
-    protected DriverManager manager;
+    protected DriverManager driverManager;
     protected PageGenerator pageGenerator;
 
     @BeforeClass
     public void setUp() {
         Utils.println("====> DemoBaseTest setUp ===========");
 
-        this.manager = new DriverManager();
-        this.driver = manager.getWebDriver();
+        this.driverManager = new DriverManager();
+        this.driver = driverManager.getWebDriver();
 
         this.pageGenerator = new PageGenerator(this.driver);
     }
 
     @AfterClass
     public void tearDown() {
-        this.manager.quitAllDrivers();
+        this.driverManager.quitAllDrivers();
         // this.manager.quitDriver(this.driver);
 
         Utils.println("<== DemoBaseTest tearDown =======");
