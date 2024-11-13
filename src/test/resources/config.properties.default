@@ -1,0 +1,15 @@
+wait.timeout=10
+use.remote.web.driver=true
+use.remote.web.url=http://localhost:4444/wd/hub/
+
+extent.report.path=target/extent/ExtentReport.html
+extent.report.theme.dark=true
+
+verify.result.in.report=true
+verify.report.is.true=true
+verify.screenshot.on.pass=true
+verify.screenshot.on.false=false
+
+listener.report=true
+listener.screenshot.on.pass=false
+listener.screenshot.on.false=true

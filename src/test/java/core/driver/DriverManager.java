@@ -1,29 +1,45 @@
 package core.driver;
 
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import core.report.Report;
+import core.utilities.Config;
 
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 public class DriverManager {
+    protected boolean isRemoteTesting = false;
+    protected String remoteWebUrl;
     private ThreadLocal<Map<String, WebDriver>> drivers = ThreadLocal.withInitial(HashMap::new);
+
+    public DriverManager() {
+        this.isRemoteTesting = Config.getBool("use.remote.web.driver");
+        this.remoteWebUrl = Config.get("use.remote.web.url");
+    }
 
     public void setDriver(String key, DriverType driverType) {
         Map<String, WebDriver> driverMap = drivers.get();
-
+        WebDriver driver;
         if (!driverMap.containsKey(key)) {
             switch (driverType) {
                 case CHROME:
-                    ChromeOptions options = new ChromeOptions();
-                    driverMap.put(key, new ChromeDriver(options));
+                    driver = this.getChromeDriver();
+                    driverMap.put(key, driver);
                     break;
                 case FIREFOX:
-                    driverMap.put(key, new FirefoxDriver());
+                    driver = this.getFirefoxDriver();
+                    driverMap.put(key, driver);
                     break;
                 case ANDROID:
                     // TODO: need appium
@@ -35,6 +51,38 @@ public class DriverManager {
                     throw new IllegalArgumentException("Driver not found: " + driverType);
             }
         }
+    }
+
+    protected WebDriver getChromeDriver() {
+        ChromeOptions options = new ChromeOptions();
+        if (this.isRemoteTesting) {
+            return this.getRemoveWebDriver(options);
+        }
+        return new ChromeDriver(options);
+    }
+
+    protected WebDriver getFirefoxDriver() {
+        FirefoxOptions options = new FirefoxOptions();
+        if (this.isRemoteTesting) {
+            return this.getRemoveWebDriver(options);
+        }
+        return new FirefoxDriver(options);
+    }
+
+    protected WebDriver getRemoveWebDriver(MutableCapabilities options) {
+        URI uri;
+        URL url;
+
+        try {
+            uri = new URI(this.remoteWebUrl);
+            url = uri.toURL();
+            return new RemoteWebDriver(url, options);
+        } catch (URISyntaxException e) {
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     protected String getThreadKey(String key) {
