@@ -6,5 +6,5 @@
 /allure-report/
 /.log
 /amplify-health.iml
-/src/test/resources/env-configs.properties
+/src/test/resources/config.properties
 .vscode

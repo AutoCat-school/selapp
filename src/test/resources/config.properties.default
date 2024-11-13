@@ -1,4 +1,6 @@
 wait.timeout=10
+use.remote.web.driver=true
+use.remote.web.url=http://localhost:4444/wd/hub/
 
 extent.report.path=target/extent/ExtentReport.html
 extent.report.theme.dark=true
