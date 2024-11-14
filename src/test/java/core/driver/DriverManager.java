@@ -9,8 +9,6 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import core.report.Report;
 import core.utilities.Config;
-import core.utilities.Utils;
-
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
