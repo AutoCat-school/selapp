@@ -28,7 +28,11 @@ public class Verify {
 		this.reportVerifyResult = Config.getBool(this.configReportResult);
 		this.reportVerifyIsTrue = Config.getBool(this.configReportIsTrue);
 		this.screenshotOnPass = Config.getBool(this.configTakeScreenShotPass);
-		this.screenshotOnFalse = Config.getBool(this.configTakeScreenShotFalse);
+		this.screenshotOnFalse = this.isScreenshotOnFalse();
+	}
+
+	public boolean isScreenshotOnFalse() {
+		return Config.getBool(this.configTakeScreenShotFalse);
 	}
 
 	public void equals(Object actual, Object expected) {
@@ -78,18 +82,17 @@ public class Verify {
 					Report.screenshot(this.driver, Log.PASS);
 				}
 			}
-		} catch (
-
-		AssertionError e) {
+		} catch (AssertionError e) {
+			String failPattern = "Verify fail, [%s] not contains [%s]";
+			String errorMessage = String.format(failPattern, actual, expected);
 			if (this.reportVerifyResult) {
-				String failPattern = "Verify fail, [%s] not contains [%s]";
-				Report.fail(String.format(failPattern, actual, expected));
+				Report.fail(errorMessage);
 
 				if (this.screenshotOnFalse) {
 					Report.screenshot(this.driver, Log.FAIL);
 				}
 			}
-			throw e;
+			throw new AssertionError(errorMessage);
 		}
 	}
 

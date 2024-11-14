@@ -18,16 +18,16 @@ public class YoutubePageHome extends YoutubePage {
 
     public void search(String keyword) {
         Report.info("Search: " + keyword);
-        WebElement searchBox = this.findVisibleElement(this.byKeywordInput);
+        WebElement searchBox = this.findElement(this.byKeywordInput);
         searchBox.sendKeys(keyword);
 
-        WebElement searchButton = this.findVisibleElement(this.bySearchButton);
+        WebElement searchButton = this.findElement(this.bySearchButton);
         searchButton.click();
     }
 
     public void hasChannel(String keyword) {
         Report.info("hasChannel: " + keyword);
-        WebElement channelTitle = this.findVisibleElement(this.byChannelTitle);
+        WebElement channelTitle = this.findElement(this.byChannelTitle);
         String title = channelTitle.getText();
         this.verify.contains(title, keyword);
     }

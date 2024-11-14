@@ -6,6 +6,8 @@ import core.report.Report;
 import core.utilities.Config;
 import core.utilities.Utils;
 
+import java.util.UUID;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -18,24 +20,27 @@ public class WebBaseListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
+        Report.println("====> WebBaseListener onStart");
         Report.setUp();
     }
 
     @Override
     public void onFinish(ITestContext context) {
+        Report.println("<== WebBaseListener onFinish");
         Report.tearDown();
     }
 
     @Override
     public void onTestStart(ITestResult result) {
         String testName = getTestName(result);
+        Report.println("--> WebBaseListener onTestStart: " + testName);
         Report.createTest(testName);
-        Report.println("-- Test Start: " + testName);
-        Report.info("Start: " + testName);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
+        Report.println("<-- WebBaseListener onTestSuccess");
+
         if (Config.getBool(WebBaseListener.configName)) {
             Report.pass("Passed: " + getTestName(result));
 
@@ -49,8 +54,11 @@ public class WebBaseListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        String format = "Fail: %s - %s";
-        String message = String.format(format, getTestName(result), result.getThrowable());
+        Report.println("<-- WebBaseListener onTestFailure");
+
+        String format = "Fail: %s";
+        String message = String.format(format, result.getThrowable());
+
         if (Config.getBool(WebBaseListener.configName)) {
             Report.fail(message);
 
@@ -64,6 +72,7 @@ public class WebBaseListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
+        Report.println("-- WebBaseListener onTestSkipped");
         Report.skip("Skipped: " + result.getMethod().getMethodName());
     }
 

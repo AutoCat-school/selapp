@@ -1,5 +1,5 @@
 wait.timeout=10
-use.remote.web.driver=true
+use.remote.web.driver=false
 use.remote.web.url=http://localhost:4444
 
 extent.report.path=target/extent/ExtentReport.html

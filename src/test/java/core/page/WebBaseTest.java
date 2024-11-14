@@ -11,8 +11,13 @@ import org.testng.annotations.Listeners;
 import core.driver.DriverManager;
 import core.report.Report;
 import core.utilities.Utils;
+import io.qameta.allure.testng.AllureTestNg;
 
-@Listeners(core.listener.WebBaseListener.class)
+@Listeners({
+        core.listener.WebBaseListener.class,
+        // core.listener.AllureTestListener.class,
+        AllureTestNg.class
+})
 public abstract class WebBaseTest {
 
     public static String DefaultDriver = "DefaultDriver";
@@ -32,7 +37,7 @@ public abstract class WebBaseTest {
 
     @BeforeClass
     public void setUp() {
-        Utils.println("====> WebBase setUp ===========");
+        Utils.println("==> WebBase setUp ===========");
 
         this.driverManager = new DriverManager();
         this.driver = driverManager.getWebDriver();
