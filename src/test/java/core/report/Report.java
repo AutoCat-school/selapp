@@ -8,6 +8,10 @@ public class Report {
         Utils.println(log);
     }
 
+    public static void printError(String log) {
+        Utils.printError(log);
+    }
+
     public static void setUp() {
         ReportExtent.getExtentReports();
     }

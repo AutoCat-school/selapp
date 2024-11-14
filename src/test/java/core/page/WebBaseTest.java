@@ -5,9 +5,11 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
 import core.driver.DriverManager;
+import core.report.Report;
 import core.utilities.Utils;
 
 @Listeners(core.listener.WebBaseListener.class)
@@ -18,6 +20,15 @@ public abstract class WebBaseTest {
     protected WebDriver driver;
     protected DriverManager driverManager;
     protected PageGenerator pageGenerator;
+
+    @BeforeSuite
+    public void beforeSuite() {
+        if (!Utils.isSeleniumGridOnline()) {
+            String message = "Selenium Grid is offline. Please start the Selenium Grid.";
+            Report.printError(message);
+            throw new RuntimeException(message);
+        }
+    }
 
     @BeforeClass
     public void setUp() {

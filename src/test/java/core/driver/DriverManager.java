@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import core.report.Report;
 import core.utilities.Config;
+import core.utilities.Utils;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -23,8 +24,16 @@ public class DriverManager {
     private ThreadLocal<Map<String, WebDriver>> drivers = ThreadLocal.withInitial(HashMap::new);
 
     public DriverManager() {
-        this.isRemoteTesting = Config.getBool("use.remote.web.driver");
-        this.remoteWebUrl = Config.get("use.remote.web.url");
+        this.isRemoteTesting = DriverManager.isRemoteTesting();
+        this.remoteWebUrl = DriverManager.getRemoteUrl();
+    }
+
+    public static String getRemoteUrl() {
+        return Config.get("use.remote.web.url");
+    }
+
+    public static boolean isRemoteTesting() {
+        return Config.getBool("use.remote.web.driver");
     }
 
     public void setDriver(String key, DriverType driverType) {
@@ -73,7 +82,7 @@ public class DriverManager {
         URL url;
 
         try {
-            uri = new URI(this.remoteWebUrl);
+            uri = new URI(this.remoteWebUrl + "/wd/hub/");
             url = uri.toURL();
             return new RemoteWebDriver(url, options);
         } catch (URISyntaxException e) {
