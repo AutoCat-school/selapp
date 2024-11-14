@@ -19,3 +19,6 @@ Selenium Java with Appium
 
 ## Testing Env - CI/CD
 - (TBD)
+
+allure serve target/allure-results
+allure generate target/allure-results -o target/allure-report --clean

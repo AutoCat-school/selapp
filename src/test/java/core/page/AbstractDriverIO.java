@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import core.report.Log;
+import core.report.Report;
 import core.utilities.Config;
 import core.verify.Verify;
 
@@ -37,7 +39,21 @@ public abstract class AbstractDriverIO extends AbstractBase {
         try {
             return this.explicitDriverWait.until(ExpectedConditions.visibilityOfElementLocated(elementBy));
         } catch (TimeoutException e) {
-            throw new NoSuchElementException(String.format("Element not found: %s", elementBy.toString()), e);
+            if (this.verify.isScreenshotOnFalse()) {
+                Report.screenshot(this.driver, Log.FAIL);
+            }
+            throw new NoSuchElementException(String.format("Element not visible: %s", elementBy.toString()), e);
+        }
+    }
+
+    public WebElement findElement(By elementBy) throws NoSuchElementException {
+        try {
+            return this.explicitDriverWait.until(ExpectedConditions.presenceOfElementLocated(elementBy));
+        } catch (TimeoutException e) {
+            if (this.verify.isScreenshotOnFalse()) {
+                Report.screenshot(this.driver, Log.FAIL);
+            }
+            throw new NoSuchElementException(String.format("Element not presence: %s", elementBy.toString()), e);
         }
     }
 
@@ -45,6 +61,9 @@ public abstract class AbstractDriverIO extends AbstractBase {
         try {
             return this.explicitDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementBy));
         } catch (TimeoutException e) {
+            if (this.verify.isScreenshotOnFalse()) {
+                Report.screenshot(this.driver, Log.FAIL);
+            }
             throw new NoSuchElementException(String.format("Elements not found: %s", elementBy.toString()), e);
         }
     }

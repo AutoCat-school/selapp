@@ -13,8 +13,8 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
 
     @BeforeClass
     public void setUp() {
-        Utils.println("====> GoogleBaseTest setUp ====");
         super.setUp();
+        Utils.println("==> YoutubeHomeBaseTest setUp ====");
         this.page = this.pageGenerator.getPage(YoutubePageHome.class);
     }
 
@@ -27,7 +27,7 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
         this.page.hasChannel(keyword);
 
         int instanceId = System.identityHashCode(this.page);
-        this.page.println("Page ID: " + instanceId);
+        this.page.println("Instance ID: " + instanceId);
 
         // this.page.sleepInSecond(1);
     }
@@ -43,7 +43,7 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
         youtubePage.hasChannel("Auto Cat");
 
         int instanceId = System.identityHashCode(youtubePage);
-        this.page.println("Page ID: " + instanceId);
+        this.page.println("Instance ID: " + instanceId);
 
         // youtubePage.sleepInSecond(1);
     }

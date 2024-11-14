@@ -1,9 +1,10 @@
 /bin/
 /logs/
 /target/
+/node_modules/
+/allure-results/
 /.idea/
 /.allure/
-/allure-report/
 /.log
 /amplify-health.iml
 /src/test/resources/config.properties
