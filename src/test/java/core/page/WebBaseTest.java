@@ -17,7 +17,6 @@ import io.qameta.allure.testng.AllureTestNg;
 
 @Listeners({
         core.listener.WebBaseListener.class,
-        // core.listener.AllureTestListener.class,
         AllureTestNg.class
 })
 public abstract class WebBaseTest {
