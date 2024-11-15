@@ -2,7 +2,9 @@ package core.page;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -15,7 +17,6 @@ import io.qameta.allure.testng.AllureTestNg;
 
 @Listeners({
         core.listener.WebBaseListener.class,
-        // core.listener.AllureTestListener.class,
         AllureTestNg.class
 })
 public abstract class WebBaseTest {
@@ -36,7 +37,7 @@ public abstract class WebBaseTest {
     }
 
     @BeforeClass
-    public void setUp() {
+    public void beforeClass() {
         Utils.println("==> WebBase setUp ===========");
 
         this.driverManager = new DriverManager();
@@ -46,7 +47,7 @@ public abstract class WebBaseTest {
     }
 
     @AfterClass
-    public void tearDown() {
+    public void afterClass() {
         this.driverManager.quitAllDrivers();
         // this.manager.quitDriver(this.driver);
 
@@ -54,7 +55,16 @@ public abstract class WebBaseTest {
     }
 
     @BeforeMethod
-    public void setup(ITestContext context) {
+    public void beforeTest(ITestContext context) {
         context.setAttribute(WebBaseTest.DefaultDriver, this.driver);
+    }
+
+    @AfterMethod
+    public void afterTest(ITestResult result) {
+        if (result.getStatus() == ITestResult.SUCCESS) {
+            Report.TestPass(result);
+        } else if (result.getStatus() == ITestResult.FAILURE) {
+            Report.TestFail(result);
+        }
     }
 }

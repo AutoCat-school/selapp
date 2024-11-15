@@ -2,9 +2,9 @@ package features.demo.youtube;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import core.page.WebBaseTest;
 import core.utilities.Utils;
+import io.qameta.allure.Owner;
 import pages.demo.youtube.YoutubePageHome;
 
 public class YoutubeHomeBaseTest extends WebBaseTest {
@@ -12,8 +12,8 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
     protected YoutubePageHome page;
 
     @BeforeClass
-    public void setUp() {
-        super.setUp();
+    public void beforeClass() {
+        super.beforeClass();
         Utils.println("==> YoutubeHomeBaseTest setUp ====");
         this.page = this.pageGenerator.getPage(YoutubePageHome.class);
     }
@@ -33,6 +33,7 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
     }
 
     @Test
+    @Owner("Simon Sai")
     public void testYoutubeSelenium() {
         String keyword = "@AutoCat24";
 

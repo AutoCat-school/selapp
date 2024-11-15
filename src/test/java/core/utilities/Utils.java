@@ -7,6 +7,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import org.testng.ITestResult;
+
 import core.driver.DriverManager;
 
 public class Utils {
@@ -57,5 +59,11 @@ public class Utils {
         }
 
         return false;
+    }
+
+    public static String getTestName(ITestResult result) {
+        String testName = result.getMethod().getMethodName().replace("test", "");
+        testName = Utils.camelToSentence(testName);
+        return testName;
     }
 }

@@ -22,3 +22,4 @@ Selenium Java with Appium
 
 allure serve target/allure-results
 allure generate target/allure-results -o target/allure-report --clean
+https://allurereport.org/docs/install-for-windows/
