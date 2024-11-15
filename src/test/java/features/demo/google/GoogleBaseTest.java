@@ -11,9 +11,9 @@ public abstract class GoogleBaseTest extends WebBaseTest {
     protected GooglePage page;
 
     @BeforeClass
-    public void setUp() {
+    public void beforeClass() {
+        super.beforeClass();
         Utils.println("====> GoogleBaseTest setUp ====");
-        super.setUp();
 
         this.page = this.pageGenerator.getPage(GooglePage.class);
     }

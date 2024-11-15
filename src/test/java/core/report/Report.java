@@ -1,9 +1,42 @@
 package core.report;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+
+import core.listener.WebBaseListener;
+import core.page.WebBaseTest;
+import core.utilities.Config;
 import core.utilities.Utils;
 
 public class Report {
+
+    public static void TestPass(ITestResult result) {
+        if (Config.getBool(WebBaseListener.configName)) {
+            Report.pass("Passed: " + getTestName(result));
+
+            if (Config.getBool(WebBaseListener.configScreenShotOnPass)) {
+                ITestContext context = result.getTestContext();
+                WebDriver driver = (WebDriver) context.getAttribute(WebBaseTest.DefaultDriver);
+                Report.screenshot(driver, Log.PASS);
+            }
+        }
+    }
+
+    public static void TestFail(ITestResult result) {
+        String format = "Fail: %s";
+        String message = String.format(format, result.getThrowable());
+
+        if (Config.getBool(WebBaseListener.configName)) {
+            Report.fail(message);
+
+            if (Config.getBool(WebBaseListener.configScreenShotOnFalse)) {
+                ITestContext context = result.getTestContext();
+                WebDriver driver = (WebDriver) context.getAttribute(WebBaseTest.DefaultDriver);
+                Report.screenshot(driver, Log.FAIL);
+            }
+        }
+    }
 
     public static void println(String log) {
         Utils.println(log);
@@ -49,5 +82,11 @@ public class Report {
     public static void screenshot(WebDriver driver, Log log) {
         ReportExtent.screenshot(driver, log);
         ReportAllure.screenshot(driver);
+    }
+
+    protected static String getTestName(ITestResult result) {
+        String testName = result.getMethod().getMethodName().replace("test", "");
+        testName = Utils.camelToSentence(testName);
+        return testName;
     }
 }
