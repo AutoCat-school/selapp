@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import core.page.WebBaseTest;
 import core.utilities.Utils;
+import io.qameta.allure.Owner;
 import pages.demo.youtube.YoutubePageHome;
 
 public class YoutubeHomeBaseTest extends WebBaseTest {
@@ -32,6 +33,7 @@ public class YoutubeHomeBaseTest extends WebBaseTest {
     }
 
     @Test
+    @Owner("Simon Sai")
     public void testYoutubeSelenium() {
         String keyword = "@AutoCat24";
 
