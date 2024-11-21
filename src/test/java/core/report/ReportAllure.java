@@ -42,6 +42,10 @@ public class ReportAllure {
     }
 
     public static void screenshot(WebDriver driver) {
+        if (driver == null) {
+            return;
+        }
+
         byte[] screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         Allure.addAttachment("Screenshot", new ByteArrayInputStream(screenshotBytes));
     }

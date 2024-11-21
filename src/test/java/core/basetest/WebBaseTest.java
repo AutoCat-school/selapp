@@ -1,4 +1,4 @@
-package core.page;
+package core.basetest;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -9,14 +9,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
-
 import core.driver.DriverManager;
+import core.page.PageGenerator;
 import core.report.Report;
 import core.utilities.Utils;
 import io.qameta.allure.testng.AllureTestNg;
 
 @Listeners({
-        core.listener.WebBaseListener.class,
+        core.listener.BaseListener.class,
         AllureTestNg.class
 })
 public abstract class WebBaseTest {

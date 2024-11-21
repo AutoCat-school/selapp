@@ -2,8 +2,8 @@
 <suite name="Automation Suite" parallel="classes" thread-count="3">
     <test name="Google Feature Tests">
         <classes>
-            <!-- <class name="features.demo.google.GooglePageTest"/> -->
-            <!-- <class name="features.demo.google.GoogleSearchTest"/> -->
+            <class name="features.demo.google.GooglePageTest"/>
+            <class name="features.demo.google.GoogleSearchTest"/>
             <class name="features.demo.youtube.YoutubeHomeBaseTest"/>
         </classes>
     </test>

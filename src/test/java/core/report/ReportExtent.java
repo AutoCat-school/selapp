@@ -72,7 +72,7 @@ public class ReportExtent {
     public static void screenshot(WebDriver driver, Log log) {
         ExtentTest extentTest = ReportExtent.getTest();
 
-        if (extentTest == null) {
+        if (extentTest == null || driver == null) {
             return;
         }
 

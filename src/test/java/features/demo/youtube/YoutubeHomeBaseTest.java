@@ -2,7 +2,8 @@ package features.demo.youtube;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import core.page.WebBaseTest;
+
+import core.basetest.WebBaseTest;
 import core.utilities.Utils;
 import io.qameta.allure.Owner;
 import pages.demo.youtube.YoutubePageHome;
